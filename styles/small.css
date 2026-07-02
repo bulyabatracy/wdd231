@@ -140,7 +140,7 @@ section p {
 
 .buttons button:hover,
 .buttons button.active {
-    background: #c8102e;
+    background: red;
 }
 
 #courses {
@@ -162,9 +162,8 @@ section p {
 }
 
 .completed {
-    background: #0b7a27;
+    background: #141b16;
     color: white;
-    border-left: 8px solid gold;
 }
 
 #credits {
