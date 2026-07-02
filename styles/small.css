@@ -1,50 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Roboto, sans-serif;
-    margin: 0;
+    background: #f8f8f8;
+    color: #222;
+    line-height: 1.6;
 }
 
 header {
-    background: #e81a1a;
+    background: #222;
     color: white;
-    padding: 1rem;
     display: flex;
-    /* 1. Add this */
-    align-items: center;
-    /* 2. Add this */
     justify-content: space-between;
-    /* keeps logo left, menu right */
+    align-items: center;
     flex-wrap: wrap;
-    /* lets nav drop to new line on mobile */
+    padding: 1rem;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: .75rem;
 }
 
 .logo img {
-    width: 50px;
+    width: 60px;
+    height: 60px;
+}
+
+.logo span {
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 #menu {
-    font-size: 2rem;
     background: none;
-    color: white;
     border: none;
+    color: white;
+    font-size: 2rem;
     cursor: pointer;
 }
 
 nav {
     width: 100%;
-    /* make nav take full width on mobile so it drops below */
 }
 
 .navigation {
     display: none;
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .navigation.open {
@@ -52,36 +59,32 @@ nav {
 }
 
 .navigation li {
-    padding: .8rem;
-    background: #333;
-    text-align: center;
+    background: #222;
+    border-bottom: 1px solid #555;
 }
 
 .navigation a {
+    display: block;
+    padding: 1rem;
     color: white;
     text-decoration: none;
-    display: block;
+    transition: .3s;
 }
 
-/* ... rest of your CSS stays the same ... */
-
-.social {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-.social img {
-    width: 32px;
-    height: 32px;
+.navigation a:hover,
+.navigation a.active {
+    background: white;
+    color: #c8102e;
 }
 
 main {
+    max-width: 1100px;
+    margin: auto;
     padding: 1rem;
-    max-width: 1000px;
-    /* keeps content from getting too wide on desktop */
-    margin: 0 auto;
+}
+
+h1 {
+    margin-bottom: 1rem;
 }
 
 .cards {
@@ -90,53 +93,106 @@ main {
 }
 
 section {
-    background: #eee;
-    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    overflow: hidden;
 }
 
 section h2 {
-    background: #222;
+    background: #0e0d0d;
     color: white;
-    padding: .5rem;
-    margin: -1rem -1rem 1rem;
+    padding: .8rem;
     text-align: center;
 }
 
-img {
-    width: 100%;
+section p {
+    padding: 1rem;
+}
+
+.cards img {
+    display: block;
+    max-width: 100%;
     height: auto;
+    border-radius: 0 0 8px 8px;
+}
+
+.certificate {
+    margin-top: 2rem;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin: 1rem 0;
+    flex-wrap: wrap;
+    gap: .75rem;
+    padding: 1rem;
 }
 
-button {
-    padding: .5rem 1rem;
+.buttons button {
+    padding: .7rem 1.5rem;
+    border: none;
+    background: #222;
+    color: white;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttons button:hover,
+.buttons button.active {
+    background: #c8102e;
 }
 
 #courses {
     display: grid;
-    gap: 10px;
+    gap: 1rem;
+    padding: 1rem;
 }
 
 .course {
+    background: #eee;
     padding: 1rem;
-    background: #ccc;
     text-align: center;
+    border-radius: 6px;
+    transition: .3s;
+}
+
+.course:hover {
+    transform: scale(1.03);
 }
 
 .completed {
-    background: green;
+    background: #0b7a27;
     color: white;
+    border-left: 8px solid gold;
+}
+
+#credits {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 1rem;
 }
 
 footer {
+    background: #222;
+    color: white;
     text-align: center;
-    padding: 1rem;
-    background: #ddd;
+    padding: 2rem 1rem;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.social img {
+    width: 42px;
+    transition: .3s;
+    color: rgb(200, 248, 5);
+}
+
+.social img:hover {
+    transform: scale(1.2);
 }

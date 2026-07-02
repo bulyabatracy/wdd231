@@ -1,42 +1,28 @@
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width:768px) {
 
     #menu {
         display: none;
-        /* hide hamburger */
     }
 
     nav {
         width: auto;
-        /* let nav shrink to content */
     }
 
     .navigation {
         display: flex;
-        /* show horizontal nav */
         gap: 1rem;
-        /* space between links */
     }
 
     .navigation li {
         background: none;
-        /* remove dark mobile bg */
-        padding: 0;
-        /* remove mobile padding */
-    }
-
-    .navigation a:hover,
-    .navigation a.active {
-        text-decoration: underline;
-        /* wayfinding cue */
     }
 
     .cards {
         grid-template-columns: 2fr 1fr;
-        /* About Me | Student Photo */
     }
 
     #courses {
         grid-template-columns: repeat(3, 1fr);
-        /* 3 course cards across */
     }
+
 }
