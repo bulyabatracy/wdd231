@@ -74,7 +74,7 @@ nav {
 .navigation a:hover,
 .navigation a.active {
     background: white;
-    color: #c8102e;
+    color: lch(5.88% 38.84 308.08);
 }
 
 main {
@@ -140,7 +140,7 @@ section p {
 
 .buttons button:hover,
 .buttons button.active {
-    background: red;
+    background: #050a5f;
 }
 
 #courses {
