@@ -1,4 +1,4 @@
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: 768px) {
 
     #menu {
         display: none;
@@ -15,14 +15,15 @@
 
     .navigation li {
         background: none;
+        border: none;
     }
 
     .cards {
         grid-template-columns: 2fr 1fr;
+        align-items: stretch;
     }
 
     #courses {
         grid-template-columns: repeat(3, 1fr);
     }
-
 }
