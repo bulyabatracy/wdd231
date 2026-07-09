@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Kampala Chamber of Commerce Business Directory. Find local businesses and members.">
+    <meta name="author" content="Tracy Bulyaba">
+    <title>Kampala Chamber of Commerce | Directory</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Facebook Open Graph -->
+    <meta property="og:title" content="Kampala Chamber of Commerce Directory">
+    <meta property="og:description" content="Browse local businesses and members of the Kampala Chamber of Commerce">
+    <meta property="og:image" content="https://yourgithub.io/wdd231/chamber/images/logo.png">
+    <meta property="og:url" content="https://yourgithub.io/wdd231/chamber/directory.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/smaller.css">
+    <link rel="stylesheet" href="styles/larger.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.png" alt="Kampala Chamber Logo" width="60">
+        <h1>Kampala Chamber of Commerce</h1>
+        <button id="menuButton" aria-label="Toggle Navigation">☰</button>
+    </header>
+
+    <nav id="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html" class="active">Directory</a></li>
+            <li><a href="#">Join</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Business Directory</h2>
+        <div class="menu">
+            <button id="gridBtn">⏹️ Grid</button>
+            <button id="listBtn">📄 List</button>
+        </div>
+        <article id="cards" class="grid"></article>
+    </main>
+
+    <footer>
+        <p>Kampala Chamber of Commerce<br>
+            Plot 1 Parliament Ave, Kampala, Uganda<br>
+            info@kampalachamber.ug | +256 414 000</p>
+        <p>© <span id="year"></span> Kampala Chamber</p>
+        <p>WDD 231 | Tracy Bulyaba</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+
+    <script src="scripts/getdates.js"></script>
+    <script src="scripts/directory.js"></script>
+</body>
+
+</html>

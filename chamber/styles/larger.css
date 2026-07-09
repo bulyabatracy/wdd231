@@ -1,0 +1,14 @@
+@media screen and (min-width: 700px) {
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    #menuButton {
+        display: none;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

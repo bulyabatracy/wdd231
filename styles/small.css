@@ -70,6 +70,7 @@ nav {
     text-decoration: none;
     transition: .3s;
 }
+
 .navigation a:hover,
 .navigation a.active {
     background: white;
@@ -124,12 +125,13 @@ section p {
     display: flex;
     flex-direction: column;
 }
+
 .certificate {
     margin-top: 2rem;
     background: white;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }
 
 
@@ -167,7 +169,7 @@ section p {
     text-align: center;
     border-radius: 6px;
     transition: .3s;
-    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
 }
 
 .course:hover {
@@ -175,9 +177,8 @@ section p {
 }
 
 .completed {
-    background: #143d21;
+    background:black;
     color: white;
-    border-left: 6px solid gold;
     font-weight: bold;
 }
 
@@ -210,3 +211,4 @@ footer {
 .social img:hover {
     transform: scale(1.2);
 }
+
