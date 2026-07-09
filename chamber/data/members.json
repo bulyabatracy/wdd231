@@ -4,7 +4,7 @@
         "address": "Plot 12 Nakasero Rd, Kampala, Uganda",
         "phone": "+256 700 123456",
         "website": "https://kampalacoffee.ug",
-        "image": "biz1.avif",
+        "image": "biz1.jpg",
         "membership": 3,
         "description": "Locally sourced coffee beans and cafe"
     },
@@ -31,7 +31,7 @@
         "address": "Wakiso District, Kampala, Uganda",
         "phone": "+256 703 222333",
         "website": "https://greenvalley.ug",
-        "image": "biz4.svg",
+        "image": "biz4.jpg",
         "membership": 3,
         "description": "Organic produce and dairy products"
     },

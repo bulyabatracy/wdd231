@@ -20,25 +20,29 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/smaller.css">
+    <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 </head>
 
 <body>
     <header>
-        <img src="images/logo.png" alt="Kampala Chamber Logo" width="60">
-        <h1>Kampala Chamber of Commerce</h1>
-        <button id="menuButton" aria-label="Toggle Navigation">☰</button>
+        <div class="logo">
+            <img src="images/logo.png" alt="Kampala Chamber Logo" width="55">
+            <h1>Kampala Chamber of Commerce</h1>
+        </div>
+
+        <button id="menuButton">☰</button>
+
+        <nav id="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="#">Join</a></li>
+                <li><a href="#">Discover</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav id="navigation">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="directory.html" class="active">Directory</a></li>
-            <li><a href="#">Join</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
 
     <main>
         <h2>Business Directory</h2>
@@ -50,12 +54,37 @@
     </main>
 
     <footer>
-        <p>Kampala Chamber of Commerce<br>
-            Plot 1 Parliament Ave, Kampala, Uganda<br>
-            info@kampalachamber.ug | +256 414 000</p>
-        <p>© <span id="year"></span> Kampala Chamber</p>
-        <p>WDD 231 | Tracy Bulyaba</p>
-        <p>Last Modification: <span id="lastModified"></span></p>
+
+        <section class="footer-contact">
+            <h3>Kampala Chamber of Commerce</h3>
+            <p>Plot 1 Parliament Avenue</p>
+            <p>Kampala, Uganda</p>
+            <p>info@kampalachamber.ug</p>
+            <p>+256 414 000000</p>
+        </section>
+
+        <section class="social">
+            <a href="https://github.com/bulyabatracy" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <img src="images/github-logo.png" alt="GitHub Logo" loading="lazy">
+            </a>
+
+            <a href="https://linkedin.com/in/bulyabatracy" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn">
+                <img src="images/linkedin.webp" alt="LinkedIn Logo" loading="lazy">
+            </a>
+
+            <a href="https://x.com/bulyabatracy" target="_blank" rel="noopener noreferrer" aria-label="X">
+                <img src="images/x-logo.jpg" alt="X Logo" loading="lazy">
+            </a>
+        </section>
+
+        <section class="footer-info">
+            <p>WDD 231 Class Project</p>
+            <p>Tracy Bulyaba</p>
+            <p>&copy; <span id="year"></span> Kampala Chamber of Commerce</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </section>
+
     </footer>
 
     <script src="scripts/getdates.js"></script>

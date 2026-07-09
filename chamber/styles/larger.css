@@ -1,14 +1,42 @@
-@media screen and (min-width: 700px) {
-    nav ul {
-        display: flex;
-        justify-content: center;
-    }
+@media only screen and (min-width: 768px) {
+
+    /* Header */
 
     #menuButton {
         display: none;
     }
 
+    header {
+        display: flex;
+        align-items: center;
+    }
+
+    nav {
+        margin-left: auto;
+        background: transparent;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 2rem;
+    }
+
+    nav a {
+        border: none;
+        padding: .5rem;
+    }
+
+    /* Business Cards */
+
     .grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Footer */
+
+    footer {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+        align-items: center;
     }
 }
