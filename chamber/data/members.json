@@ -4,7 +4,7 @@
         "address": "Plot 12 Nakasero Rd, Kampala, Uganda",
         "phone": "+256 700 123456",
         "website": "https://kampalacoffee.ug",
-        "image": "biz1.jpg",
+        "image": "biz1.webp",
         "membership": 3,
         "description": "Locally sourced coffee beans and cafe"
     },
@@ -13,7 +13,7 @@
         "address": "23 Yusuf Lule Rd, Kampala, Uganda",
         "phone": "+256 701 987654",
         "website": "https://lakeviewtech.ug",
-        "image": "biz2.jpg",
+        "image": "biz2.webp",
         "membership": 2,
         "description": "Web design and IT support services"
     },
@@ -22,7 +22,7 @@
         "address": "Owino Market, Kampala, Uganda",
         "phone": "+256 772 555888",
         "website": "https://banyancrafts.ug",
-        "image": "biz3.jpg",
+        "image": "biz3.webp",
         "membership": 1,
         "description": "Handmade crafts and souvenirs"
     },
@@ -31,7 +31,7 @@
         "address": "Wakiso District, Kampala, Uganda",
         "phone": "+256 703 222333",
         "website": "https://greenvalley.ug",
-        "image": "biz4.jpg",
+        "image": "biz4.webp",
         "membership": 3,
         "description": "Organic produce and dairy products"
     },
@@ -40,7 +40,7 @@
         "address": "Bus Park, Kampala, Uganda",
         "phone": "+256 755 444777",
         "website": "https://citylinetransport.ug",
-        "image": "biz5.jpg",
+        "image": "biz5.webp",
         "membership": 2,
         "description": "Intercity and local transport services"
     },
@@ -49,7 +49,7 @@
         "address": "Industrial Area, Kampala, Uganda",
         "phone": "+256 414 333111",
         "website": "https://nileprinting.ug",
-        "image": "biz6.jpg",
+        "image": "biz6.webp",
         "membership": 1,
         "description": "Commercial printing and branding"
     },
@@ -58,7 +58,7 @@
         "address": "Kololo Hill, Kampala, Uganda",
         "phone": "+256 700 999000",
         "website": "https://sunrisemedical.ug",
-        "image": "biz7.jpg",
+        "image": "biz7.webp",
         "membership": 3,
         "description": "Family healthcare and diagnostics"
     },
@@ -67,7 +67,7 @@
         "address": "Garden City Mall, Kampala, Uganda",
         "phone": "+256 785 112233",
         "website": "https://pearlfashion.ug",
-        "image": "biz8.jpg",
+        "image": "biz8.webp",
         "membership": 2,
         "description": "African print clothing and accessories"
     },
@@ -76,7 +76,7 @@
         "address": "5th Street Industrial Area, Kampala, Uganda",
         "phone": "+256 702 445566",
         "website": "https://saferideauto.ug",
-        "image": "biz9.jpg",
+        "image": "biz9.webp",
         "membership": 1,
         "description": "Car repair, oil change, and diagnostics"
     }
