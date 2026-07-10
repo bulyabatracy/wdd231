@@ -12,26 +12,35 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- Facebook Open Graph -->
     <meta property="og:title" content="Kampala Chamber of Commerce Directory">
     <meta property="og:description" content="Browse local businesses and members of the Kampala Chamber of Commerce">
-    <meta property="og:image" content="https://yourgithub.io/wdd231/chamber/images/logo.png">
-    <meta property="og:url" content="https://yourgithub.io/wdd231/chamber/directory.html">
+    <meta property="og:image" content="https://bulyabatracy.github.io/wdd231/chamber/images/logo.png">
+    <meta property="og:url" content="https://bulyabatracy.github.io/wdd231/chamber/directory.html">
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JS with defer -->
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="logo">
             <img src="images/logo.png" alt="Kampala Chamber Logo" width="55">
-            <h1>Kampala Chamber of Commerce</h1>
+            <h2>Kampala Chamber of Commerce</h2> <!-- Changed from h1 to h2 -->
         </div>
 
-        <button id="menuButton">☰</button>
+        <button id="menuButton" aria-label="Menu">☰</button>
 
         <nav id="navigation">
             <ul>
@@ -43,9 +52,8 @@
         </nav>
     </header>
 
-
     <main>
-        <h2>Business Directory</h2>
+        <h1>Kampala Chamber of Commerce Directory</h1> <!-- Only H1 and it's in main -->
         <div class="menu">
             <button id="gridBtn">⏹️ Grid</button>
             <button id="listBtn">📄 List</button>
@@ -60,7 +68,7 @@
             <p>Plot 2 Parliament Avenue</p>
             <p>Kampala, Uganda</p>
             <p>info@kampalachamber.ug</p>
-            <p>+256 414 000000</p>
+            <p>+256 414 000</p>
         </section>
 
         <section class="social">
@@ -87,8 +95,6 @@
 
     </footer>
 
-    <script src="scripts/getdates.js"></script>
-    <script src="scripts/directory.js"></script>
 </body>
 
 </html>
