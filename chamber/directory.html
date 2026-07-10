@@ -53,25 +53,28 @@
     </header>
 
     <main>
-        <h1>Kampala Chamber of Commerce Directory</h1> <!-- Only H1 and it's in main -->
+        <h1>Kampala Chamber of Commerce Directory</h1>
         <div class="menu">
             <button id="gridBtn">⏹️ Grid</button>
             <button id="listBtn">📄 List</button>
         </div>
-        <article id="cards" class="grid"></article>
+        <article id="cards" class="grid" aria-labelledby="directory-heading">
+            <h2 id="directory-heading" class="visually-hidden">Business Listings</h2>
+        </article>
     </main>
 
     <footer>
 
         <section class="footer-contact">
-            <h3>Kampala Chamber of Commerce</h3>
+            <h2>Kampala Chamber of Commerce</h2> <!-- Changed from h3 to h2 -->
             <p>Plot 2 Parliament Avenue</p>
             <p>Kampala, Uganda</p>
             <p>info@kampalachamber.ug</p>
             <p>+256 414 000</p>
         </section>
 
-        <section class="social">
+        <section class="social" aria-labelledby="social-heading">
+            <h2 id="social-heading" class="visually-hidden">Social Media Links</h2>
             <a href="https://github.com/bulyabatracy" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <img src="images/github-logo.png" alt="GitHub Logo" loading="lazy">
             </a>
@@ -86,7 +89,8 @@
             </a>
         </section>
 
-        <section class="footer-info">
+        <section class="footer-info" aria-labelledby="info-heading">
+            <h2 id="info-heading" class="visually-hidden">Project Information</h2>
             <p>WDD 231 Class Project</p>
             <p>Tracy Bulyaba</p>
             <p>&copy; <span id="year"></span> Kampala Chamber of Commerce</p>
