@@ -44,20 +44,16 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: .75rem;
+    gap: 12px;
 }
 
-.logo img {
-    width: 60px;
-    height: auto;
+.site-name h2 {
+    font-size: 1.3rem;
+    margin: 0;
 }
 
-.logo h2 {
-    font-size: 1.2rem;
-}
-
-.logo p {
-    font-size: .9rem;
+.site-name p {
+    margin: 0;
 }
 
 /* ---------- Navigation ---------- */
@@ -152,8 +148,7 @@ main h1 {
 }
 
 .card img {
-    width: 120px;
-    height: 120px;
+   
     object-fit: contain;
     margin-bottom: 1rem;
 }
@@ -200,7 +195,7 @@ main h1 {
 
 footer {
     margin-top: 2rem;
-    background: var(--primary-color);
+    background-color: var(--primary-color);
     color: white;
     padding: 2rem 1rem;
     display: grid;
@@ -209,23 +204,29 @@ footer {
     text-align: center;
 }
 
+.footer-contact h3,
+.footer-contact h2 {
+    margin-bottom: .5rem;
+}
+
 .footer-contact p,
 .footer-info p {
-    margin: .25rem 0;
+    margin: .3rem 0;
 }
 
 .social {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .social img {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
+    transition: transform .3s ease;
 }
 
 .social img:hover {
     transform: scale(1.1);
-    transition: .3s;
 }
