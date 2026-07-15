@@ -1,67 +1,114 @@
-const cardsContainer = document.querySelector('#cards');
-const gridBtn = document.querySelector('#gridBtn');
-const listBtn = document.querySelector('#listBtn');
+// Select Elements
+const cardsContainer = document.querySelector("#cards");
+const gridBtn = document.querySelector("#gridBtn");
+const listBtn = document.querySelector("#listBtn");
+const menuButton = document.querySelector("#menuButton");
+const navigation = document.querySelector("#navigation");
 
-gridBtn.addEventListener('click', () => {
-    cardsContainer.classList.add('grid');
-    cardsContainer.classList.remove('list');
+// ------------------------------
+// Mobile Navigation
+// ------------------------------
+menuButton.addEventListener("click", () => {
+    navigation.classList.toggle("open");
 });
 
-listBtn.addEventListener('click', () => {
-    cardsContainer.classList.add('list');
-    cardsContainer.classList.remove('grid');
+// ------------------------------
+// Grid and List Buttons
+// ------------------------------
+gridBtn.addEventListener("click", () => {
+    cardsContainer.classList.add("grid");
+    cardsContainer.classList.remove("list");
 });
+
+listBtn.addEventListener("click", () => {
+    cardsContainer.classList.add("list");
+    cardsContainer.classList.remove("grid");
+});
+
+// ------------------------------
+// Fetch Member Data
+// ------------------------------
+const url = "data/members.json";
 
 async function getMemberData() {
-    const response = await fetch('data/members.json');
-    const data = await response.json();
-    displayMembers(data);
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("Unable to load member data.");
+        }
+
+        const members = await response.json();
+
+        displayMembers(members);
+
+    } catch (error) {
+        console.error("Error:", error);
+    }
 }
 
+// ------------------------------
+// Display Members
+// ------------------------------
 function displayMembers(members) {
+
+    cardsContainer.innerHTML = "";
+
+    const membershipLevels = {
+        1: "Member",
+        2: "Silver Member",
+        3: "Gold Member"
+    };
+
     members.forEach(member => {
-        let card = document.createElement('section');
-        card.classList.add('card');
 
-        let img = document.createElement('img');
-        img.src = `images/${member.image}`;
-        img.alt = `${member.name} logo`;
-        img.loading = 'lazy';
+        const card = document.createElement("section");
+        card.classList.add("card");
 
-        let h3 = document.createElement('h3');
-        h3.textContent = member.name;
+        const image = document.createElement("img");
+        image.src = `images/${member.image}`;
+        image.alt = `${member.name} Logo`;
+        image.loading = "lazy";
+        image.width = 120;
+        image.height = 120;
 
-        let address = document.createElement('p');
-        address.textContent = member.address;
+        const name = document.createElement("h3");
+        name.textContent = member.name;
 
-        let phone = document.createElement('p');
-        phone.textContent = member.phone;
+        const address = document.createElement("p");
+        address.innerHTML = `<strong>Address:</strong> ${member.address}`;
 
-        let website = document.createElement('a');
-        website.href = member.website;
-        website.textContent = "Website";
-        website.target = "_blank";
+        const phone = document.createElement("p");
+        phone.innerHTML = `<strong>Phone:</strong> ${member.phone}`;
 
-        let level = document.createElement('p');
-        let levels = { 1: "Member", 2: "Silver", 3: "Gold" };
-        level.textContent = `Membership: ${levels[member.membership]}`;
+        const website = document.createElement("p");
 
-        card.appendChild(img);
-        card.appendChild(h3);
+        const link = document.createElement("a");
+        link.href = member.website;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = "Visit Website";
+
+        website.appendChild(link);
+
+        const level = document.createElement("p");
+        level.innerHTML =
+            `<strong>Membership:</strong> ${membershipLevels[member.membership]}`;
+
+        card.appendChild(image);
+        card.appendChild(name);
         card.appendChild(address);
         card.appendChild(phone);
         card.appendChild(website);
         card.appendChild(level);
 
         cardsContainer.appendChild(card);
+
     });
+
 }
 
+// ------------------------------
+// Load Members
+// ------------------------------
 getMemberData();
-
-// Hamburger menu
-const menuButton = document.querySelector('#menuButton');
-const navigation = document.querySelector('#navigation ul');
-menuButton.addEventListener('click', () => {
-    navigation.classList.toggle('open');
-});
