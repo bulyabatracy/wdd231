@@ -98,8 +98,10 @@ nav {
 
 #navigation a:hover,
 #navigation a.active {
-    background: rgba(255, 255, 255, .2);
+    background-color: #ffffff;
+    color: #0d3b66;
 }
+
 
 /* ---------- Main ---------- */
 
