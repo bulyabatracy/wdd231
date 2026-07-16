@@ -200,23 +200,33 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 2rem 1rem;
+    align-items: center;
     text-align: center;
 }
 
-.footer-contact h3 {
-    margin-bottom: .5rem;
+.footer-contact p {
+    margin: .3rem 0;
+    gap: 1rem;
+    text-align: left;
+    margin-left: 6rem;
+}
+.footer-contact h2 {
+    
+    margin-left: 6rem;
+    margin-top: 0.5rem;
 }
 
-.footer-contact p,
 .footer-info p {
     margin: .3rem 0;
+    text-align: right;
+    margin-right: 6rem;
 }
 
 .social {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
+    text-align: center;
 }
 
 .social img {
