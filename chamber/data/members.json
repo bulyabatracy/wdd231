@@ -1,21 +1,23 @@
 [
     {
         "name": "Kampala Coffee Roasters",
-        "address": "Plot 12 Nakasero Rd, Kampala, Uganda",
+        "address": "Plot 12 Nakasero Road, Kampala, Uganda",
         "phone": "+256 700 123456",
         "website": "https://kampalacoffee.ug",
         "image": "biz1.webp",
         "membership": 3,
-        "description": "Locally sourced coffee beans and cafe"
+        "membershipLevel": "Gold",
+        "description": "Premium coffee roastery offering freshly roasted Ugandan coffee beans, specialty beverages, and café services."
     },
     {
         "name": "Lakeview Tech Solutions",
-        "address": "23 Yusuf Lule Rd, Kampala, Uganda",
+        "address": "23 Yusuf Lule Road, Kampala, Uganda",
         "phone": "+256 701 987654",
         "website": "https://lakeviewtech.ug",
         "image": "biz2.webp",
         "membership": 2,
-        "description": "Web design and IT support services"
+        "membershipLevel": "Silver",
+        "description": "Professional web development, software solutions, cybersecurity, and IT support for businesses."
     },
     {
         "name": "Banyan Crafts",
@@ -24,25 +26,28 @@
         "website": "https://banyancrafts.ug",
         "image": "biz3.webp",
         "membership": 1,
-        "description": "Handmade crafts and souvenirs"
+        "membershipLevel": "Member",
+        "description": "Handcrafted African art, jewelry, souvenirs, and cultural gift items made by local artisans."
     },
     {
         "name": "Green Valley Farms",
-        "address": "Wakiso District, Kampala, Uganda",
+        "address": "Wakiso District, Uganda",
         "phone": "+256 703 222333",
         "website": "https://greenvalley.ug",
         "image": "biz4.webp",
         "membership": 3,
-        "description": "Organic produce and dairy products"
+        "membershipLevel": "Gold",
+        "description": "Supplier of fresh organic vegetables, fruits, dairy products, and farm produce across Uganda."
     },
     {
         "name": "Cityline Transport",
-        "address": "Bus Park, Kampala, Uganda",
+        "address": "Old Taxi Park, Kampala, Uganda",
         "phone": "+256 755 444777",
         "website": "https://citylinetransport.ug",
         "image": "biz5.webp",
         "membership": 2,
-        "description": "Intercity and local transport services"
+        "membershipLevel": "Silver",
+        "description": "Reliable passenger transportation, logistics, and courier delivery services throughout Uganda."
     },
     {
         "name": "Nile Printing Press",
@@ -51,16 +56,18 @@
         "website": "https://nileprinting.ug",
         "image": "biz6.webp",
         "membership": 1,
-        "description": "Commercial printing and branding"
+        "membershipLevel": "Member",
+        "description": "Commercial printing, branding, graphic design, promotional materials, and corporate stationery."
     },
     {
         "name": "Sunrise Medical Clinic",
-        "address": "Kololo Hill, Kampala, Uganda",
+        "address": "Kololo Hill Drive, Kampala, Uganda",
         "phone": "+256 700 999000",
         "website": "https://sunrisemedical.ug",
         "image": "biz7.webp",
         "membership": 3,
-        "description": "Family healthcare and diagnostics"
+        "membershipLevel": "Gold",
+        "description": "Comprehensive healthcare services including laboratory diagnostics, family medicine, and specialist consultations."
     },
     {
         "name": "Pearl Fashion Boutique",
@@ -69,15 +76,17 @@
         "website": "https://pearlfashion.ug",
         "image": "biz8.webp",
         "membership": 2,
-        "description": "African print clothing and accessories"
+        "membershipLevel": "Silver",
+        "description": "Modern fashion boutique specializing in African-inspired clothing, footwear, handbags, and accessories."
     },
     {
         "name": "SafeRide Auto Garage",
-        "address": "5th Street Industrial Area, Kampala, Uganda",
+        "address": "5th Street, Industrial Area, Kampala, Uganda",
         "phone": "+256 702 445566",
         "website": "https://saferideauto.ug",
         "image": "biz9.webp",
         "membership": 1,
-        "description": "Car repair, oil change, and diagnostics"
+        "membershipLevel": "Member",
+        "description": "Professional vehicle servicing, engine diagnostics, repairs, wheel alignment, and maintenance."
     }
 ]
