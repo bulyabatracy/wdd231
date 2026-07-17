@@ -113,6 +113,47 @@ section p {
     padding: 1rem;
 }
 
+.weather-card {
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.weather-card h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+.weather-card figure {
+    display: grid;
+    place-items: center;
+    gap: 0.75rem;
+    margin: 0.5rem 0 0;
+}
+
+.weather-card img {
+    width: 120px;
+    height: 120px;
+}
+
+#forecast {
+    list-style: none;
+    padding: 0;
+}
+
+#forecast li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0;
+}
+
+#forecast li:last-child {
+    border-bottom: none;
+}
+
 .cards img {
     width: 100%;
     height: 100%;
@@ -177,7 +218,7 @@ section p {
 }
 
 .completed {
-    background:black;
+    background: black;
     color: white;
     font-weight: bold;
 }
@@ -210,7 +251,3 @@ footer {
 
 .social img:hover {
     transform: scale(1.2);
-
-
-
-

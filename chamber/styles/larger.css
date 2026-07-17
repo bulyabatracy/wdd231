@@ -23,6 +23,22 @@
         border-radius: 5px;
     }
 
+    .home-grid {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    .spotlights {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero {
+        min-height: 360px;
+    }
+
+    .hero-copy {
+        max-width: 22rem;
+    }
+
     .grid {
         grid-template-columns: repeat(3, 1fr);
     }

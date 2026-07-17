@@ -1,147 +1,154 @@
 // ===============================
+// Mobile navigation
+// ===============================
+
+const menuButton = document.querySelector('#menuButton');
+const navigation = document.querySelector('#navigation');
+
+menuButton?.addEventListener('click', () => {
+    const isOpen = navigation.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+});
+
+// ===============================
 // Weather API
 // ===============================
 
-const apiKey = "YOUR_API_KEY";
+const apiKey = 'f874dbe5fcef8e81d73a105cc78f4bf8'; // Replace with your OpenWeatherMap API key
 const lat = 0.3476;
 const lon = 32.5825;
-
-const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
-async function getWeather() {
-    try {
-        const response = await fetch(weatherURL);
+const currentTemp = document.querySelector('#current-temp');
+const weatherDesc = document.querySelector('#weather-desc');
+const weatherHumidity = document.querySelector('#weather-humidity');
+const forecastList = document.querySelector('#forecast');
 
-        if (!response.ok) throw Error("Weather data not available.");
+function showWeatherKeyMessage() {
+    if (currentTemp) currentTemp.textContent = 'Add your OpenWeatherMap API key to chamber/scripts/home.js';
+    if (weatherDesc) weatherDesc.textContent = 'OpenWeatherMap API key is required to show weather.';
+    if (weatherHumidity) weatherHumidity.textContent = '';
+    if (forecastList) forecastList.innerHTML = '<li>Forecast unavailable until API key is set.</li>';
+}
+
+async function getCurrentWeather() {
+    if (apiKey.includes('YOUR_API_KEY')) {
+        showWeatherKeyMessage();
+        return false;
+    }
+
+    try {
+        const response = await fetch(currentWeatherURL);
+        if (!response.ok) {
+            throw new Error(`Weather request failed: ${response.status} ${response.statusText}`);
+        }
 
         const data = await response.json();
-
-        document.querySelector("#current-temp").textContent =
-            `${Math.round(data.main.temp)}°C`;
-
-        document.querySelector("#weather-desc").textContent =
-            data.weather[0].description;
-
+        currentTemp.textContent = `Temperature: ${Math.round(data.main.temp)}°C`;
+        weatherDesc.textContent = `Conditions: ${data.weather[0].description}`;
+        if (weatherHumidity) {
+            weatherHumidity.textContent = `Humidity: ${data.main.humidity}%`;
+        }
+        return true;
     } catch (error) {
         console.error(error);
+        if (currentTemp) currentTemp.textContent = 'Weather unavailable.';
+        if (weatherDesc) weatherDesc.textContent = 'Please try again later.';
+        if (weatherHumidity) weatherHumidity.textContent = '';
+        if (forecastList) forecastList.innerHTML = '<li>Forecast unavailable.</li>';
+        return false;
     }
 }
 
-async function getForecast() {
+async function getWeatherForecast() {
     try {
-
         const response = await fetch(forecastURL);
-
-        if (!response.ok) throw Error("Forecast unavailable.");
+        if (!response.ok) {
+            throw new Error('Forecast data not available.');
+        }
 
         const data = await response.json();
+        const daily = data.list.filter(item => item.dt_txt.includes('12:00:00'));
+        if (forecastList) forecastList.innerHTML = '';
 
-        const forecast = document.querySelector("#forecast");
-        forecast.innerHTML = "";
+        if (daily.length === 0) {
+            if (forecastList) forecastList.innerHTML = '<li>No forecast data available.</li>';
+            return;
+        }
 
-        // 12:00 PM forecast for next three days
-        const daily = data.list.filter(item =>
-            item.dt_txt.includes("12:00:00")
-        );
-
-        daily.slice(0, 3).forEach(day => {
-
-            const li = document.createElement("li");
-
-            const date = new Date(day.dt_txt);
-
-            li.textContent =
-                `${date.toLocaleDateString('en-US', { weekday: 'short' })}: ${Math.round(day.main.temp)}°C`;
-
-            forecast.appendChild(li);
-
+        daily.slice(0, 3).forEach(item => {
+            const date = new Date(item.dt_txt);
+            const icon = item.weather[0].icon;
+            const description = item.weather[0].description;
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <span class="forecast-date">${date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</span>
+                <span class="forecast-icon"><img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}" width="40" height="40"></span>
+                <span class="forecast-temp">${Math.round(item.main.temp)}°C</span>
+                <span class="forecast-desc">${description}</span>
+            `;
+            forecastList.appendChild(listItem);
         });
-
     } catch (error) {
         console.error(error);
+        if (forecastList) forecastList.innerHTML = '<li>Forecast unavailable.</li>';
     }
 }
 
-getWeather();
-getForecast();
-
+async function initChamberPage() {
+    const weatherSuccess = await getCurrentWeather();
+    if (weatherSuccess) {
+        await getWeatherForecast();
+    }
+}
 
 // ===============================
 // Business Spotlights
 // ===============================
 
-const memberURL = "data/members.json";
+const memberURL = 'data/members.json';
+const spotlightsContainer = document.querySelector('#spotlights');
 
-async function getMembers() {
-
+async function getSpotlights() {
     try {
-
         const response = await fetch(memberURL);
-
-        if (!response.ok) throw Error("Unable to load members.");
+        if (!response.ok) {
+            throw new Error('Unable to load member data.');
+        }
 
         const members = await response.json();
-
         displaySpotlights(members);
-
     } catch (error) {
-
         console.error(error);
-
+        spotlightsContainer.innerHTML = '<p>Member spotlights unavailable.</p>';
     }
-
 }
 
 function displaySpotlights(members) {
+    const featured = members
+        .filter(member => member.membership === 2 || member.membership === 3)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3);
 
-    const spotlight = document.querySelector("#spotlight-container");
+    spotlightsContainer.innerHTML = '';
 
-    spotlight.innerHTML = "";
-
-    // Only Silver and Gold members
-    const featured = members.filter(member =>
-        member.membership === 2 ||
-        member.membership === 3
-    );
-
-    // Shuffle array
-    featured.sort(() => 0.5 - Math.random());
-
-    // Display first three
-    featured.slice(0, 3).forEach(member => {
-
-        const card = document.createElement("section");
-
-        card.classList.add("spotlight-card");
+    featured.forEach(member => {
+        const card = document.createElement('section');
+        card.classList.add('spotlight');
 
         card.innerHTML = `
-
-            <img src="images/${member.image}"
-                 alt="${member.name} Logo"
-                 loading="lazy">
-
+            <img src="images/${member.image}" alt="${member.name} Logo" loading="lazy">
             <h3>${member.name}</h3>
-
             <p>${member.address}</p>
-
             <p>${member.phone}</p>
-
-            <p>
-                Membership:
-                ${member.membership === 3 ? "Gold" : "Silver"}
-            </p>
-
-            <a href="${member.website}" target="_blank">
-                Visit Website
-            </a>
-
+            <p><a href="${member.website}" target="_blank" rel="noopener">Visit Website</a></p>
+            <p><strong>${member.membership === 3 ? 'Gold' : 'Silver'} Member</strong></p>
         `;
 
-        spotlight.appendChild(card);
-
+        spotlightsContainer.appendChild(card);
     });
-
 }
 
-getMembers();
+initChamberPage();
+getSpotlights();

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Kampala Chamber of Commerce Business Directory. Find local businesses and members.">
+        content="Welcome to the Kampala Chamber of Commerce home page. Discover events, weather updates, and member spotlights.">
     <meta name="author" content="Tracy Bulyaba">
-    <title>Kampala Chamber of Commerce | Directory</title>
+    <title>Kampala Chamber of Commerce | Home</title>
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
@@ -17,11 +17,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Facebook Open Graph -->
-    <meta property="og:title" content="Kampala Chamber of Commerce Directory">
-    <meta property="og:description" content="Browse local businesses and members of the Kampala Chamber of Commerce">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kampala Chamber of Commerce">
+    <meta property="og:description"
+        content="Welcome to the Kampala Chamber home page. Find events, weather, and featured members.">
     <meta property="og:image" content="https://bulyabatracy.github.io/wdd231/chamber/images/logo.webp">
-    <meta property="og:url" content="https://bulyabatracy.github.io/wdd231/chamber/directory.html">
+    <meta property="og:url" content="https://bulyabatracy.github.io/wdd231/chamber/index.html">
+    <meta property="og:type" content="website">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bulyabatracy.github.io/wdd231/chamber/index.html">
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
@@ -30,50 +35,85 @@
 
     <!-- JS with defer -->
     <script src="scripts/getdates.js" defer></script>
-    <script src="scripts/directory.js" defer></script>
-    <script src="scripts/weather.js" defer></script>
-    <script src="scripts/spotlights.js" defer></script>
+    <script src="scripts/home.js" defer></script>
+
 </head>
 
 <body>
     <header>
+
+
         <div class="logo">
             <img src="images/logo.webp" alt="Kampala Chamber Logo" width="55" height="55" loading="eager">
             <h2>Kampala Chamber of Commerce</h2>
         </div>
 
-        <button id="menuButton" aria-label="Menu">☰</button>
+        <button id="menuButton" aria-label="Open navigation menu" aria-controls="navigation" aria-expanded="false">
+            ☰
+        </button>
 
-        <nav id="navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html" class="active">Directory</a></li>
-                <li><a href="#">Join</a></li>
-                <li><a href="#">Discover</a></li>
+        <nav>
+            <ul id="navigation">
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <h1>Welcome to the Kampala Chamber of Commerce</h1>
+
         <!-- HERO -->
         <section class="hero">
             <img src="images/hero-kampala.webp" alt="Kampala City Skyline">
-            <a href="join.html" class="cta">Join The Chamber</a>
+            <div class="hero-copy">
+                <p>Connecting local businesses, supporting economic growth, and inviting the community to thrive
+                    together.</p>
+                <a href="join.html" class="cta">Join The Chamber</a>
+            </div>
         </section>
 
         <!-- HOME GRID -->
         <div class="home-grid">
-            <section class="card">
+            <section class="card events">
                 <h2>Current Events</h2>
-                <p><strong>Business Networking Breakfast</strong> - Oct 15, 2026</p>
-                <p>Join local business leaders at Serena Hotel for networking and guest speaker.</p>
+                <div class="events-grid">
+                    <article class="event-card">
+                        <h3>Business Networking Breakfast</h3>
+                        <p class="event-date"><span class="calendar-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span><time datetime="2026-10-15">Oct 15, 2026</time></p>
+                        <p>Join local business leaders at Serena Hotel for networking and guest speakers.</p>
+                    </article>
+
+                    <article class="event-card">
+                        <h3>Small Business Workshop</h3>
+                        <p class="event-date"><span class="calendar-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span><time datetime="2026-11-03">Nov 3, 2026</time></p>
+                        <p>Practical tips for marketing and finance for small businesses.</p>
+                    </article>
+
+                    <article class="event-card">
+                        <h3>Annual Trade Fair</h3>
+                        <p class="event-date"><span class="calendar-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span><time datetime="2026-12-01">Dec 1, 2026</time></p>
+                        <p>Showcase of local products and networking with international buyers.</p>
+                    </article>
+                </div>
             </section>
 
             <section class="card" id="weather">
-                <h2>Weather</h2>
-                <p id="current-temp">Loading...</p>
-                <p id="weather-desc"></p>
-                <div id="forecast"></div>
+                <div class="weather-grid">
+                    <div class="current-weather">
+                        <h2>Weather</h2>
+                        <p id="current-temp">Loading...</p>
+                        <p id="weather-desc"></p>
+                        <p id="weather-humidity"></p>
+                    </div>
+
+                    <div class="forecast-wrapper">
+                        <h3>3-Day Temperature Forecast</h3>
+                        <ul id="forecast" aria-label="Three day temperature forecast"></ul>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -83,6 +123,15 @@
             <div class="spotlights" id="spotlights">
                 <!-- JS will load gold/silver members here -->
             </div>
+
+            <!-- ====== CALL TO ACTION ====== -->
+            <section class="cta-section" aria-labelledby="cta-heading">
+                <div class="cta-content">
+                    <h2 id="cta-heading">Ready to Grow Your Business?</h2>
+                    <p>Join the Mubende Chamber of Commerce today and connect with over 50 local businesses.</p>
+                    <a href="join.html" class="cta-button" role="button">Become a Member</a>
+                </div>
+            </section>
         </section>
     </main>
 

@@ -1,44 +1,75 @@
-const apiKey = 'YOUR_API_KEY_HERE'; // Get free key from https://openweathermap.org/api
-const lat = 0.3136; // Kampala
-const lon = 32.5811;
-const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-
 const currentTemp = document.querySelector('#current-temp');
-const weatherDesc = document.querySelector('#weather-desc');
-const forecastDiv = document.querySelector('#forecast');
+const weatherIcon = document.querySelector('#weather-icon');
+const captionDesc = document.querySelector('figcaption');
+const forecastList = document.querySelector('#forecast');
+
+const lat = 49.75;
+const lon = 6.64;
+const apiKey = 'YOUR_API_KEY_HERE'; // Replace with your OpenWeatherMap API key
+const currentUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
 async function apiFetch() {
-    try {
-        const response = await fetch(weatherURL);
-        if (response.ok) {
-            const data = await response.json();
-            displayResults(data);
-        } else {
-            throw Error(await response.text());
-        }
-    } catch (error) {
-        console.log(error);
+  try {
+    const response = await fetch(currentUrl);
+    if (!response.ok) {
+      throw new Error('Current weather data not available.');
     }
+    const data = await response.json();
+    displayCurrentWeather(data);
+    getWeatherForecast();
+  } catch (error) {
+    console.error(error);
+    if (currentTemp) currentTemp.textContent = 'Weather unavailable.';
+    if (captionDesc) captionDesc.textContent = 'Please try again later.';
+  }
 }
 
-function displayResults(data) {
-    // Current weather - first item in list
-    const current = data.list[0];
-    currentTemp.innerHTML = `Temp: ${current.main.temp.toFixed(0)}°C`;
-    weatherDesc.innerHTML = `${current.weather[0].description}`;
+function displayCurrentWeather(data) {
+  if (!currentTemp || !weatherIcon || !captionDesc) return;
 
-    // 3 Day Forecast - get 24hr, 48hr, 72hr marks
-    forecastDiv.innerHTML = '';
-    const days = [8, 16, 24]; // 3hr intervals * 8 = 24hrs
-    days.forEach(dayIndex => {
-        const dayData = data.list[dayIndex];
-        const date = new Date(dayData.dt * 1000);
-        const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+  currentTemp.innerHTML = `${data.main.temp.toFixed(0)}&deg;C`;
+  const description = data.weather[0].description;
+  captionDesc.textContent = description;
+  const iconCode = data.weather[0].icon;
+  const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+  weatherIcon.setAttribute('src', iconUrl);
+  weatherIcon.setAttribute('alt', description);
+}
 
-        const forecastItem = document.createElement('p');
-        forecastItem.innerHTML = `${dayName}: ${dayData.main.temp.toFixed(0)}°C`;
-        forecastDiv.appendChild(forecastItem);
-    });
+async function getWeatherForecast() {
+  try {
+    const response = await fetch(forecastUrl);
+    if (!response.ok) {
+      throw new Error('Forecast data not available.');
+    }
+    const data = await response.json();
+    displayForecast(data);
+  } catch (error) {
+    console.error(error);
+    if (forecastList) forecastList.innerHTML = '<li>Forecast unavailable.</li>';
+  }
+}
+
+function displayForecast(data) {
+  if (!forecastList) return;
+
+  const daily = data.list.filter(item => item.dt_txt.includes('12:00:00'));
+  forecastList.innerHTML = '';
+
+  if (daily.length === 0) {
+    forecastList.innerHTML = '<li>Forecast unavailable.</li>';
+    return;
+  }
+
+  daily.slice(0, 3).forEach(item => {
+    const date = new Date(item.dt_txt);
+    const dayName = date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    const temp = Math.round(item.main.temp);
+    const listItem = document.createElement('li');
+    listItem.textContent = `${dayName}: ${temp}°C`;
+    forecastList.appendChild(listItem);
+  });
 }
 
 apiFetch();
