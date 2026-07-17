@@ -27,7 +27,6 @@ body {
     width: 1px;
     height: 1px;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
     white-space: nowrap;
 }
 
@@ -210,8 +209,9 @@ footer {
     text-align: left;
     margin-left: 6rem;
 }
+
 .footer-contact h2 {
-    
+
     margin-left: 6rem;
     margin-top: 0.5rem;
 }
