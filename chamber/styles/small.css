@@ -28,6 +28,7 @@ body {
     height: 1px;
     overflow: hidden;
     white-space: nowrap;
+    clip: rect(0, 0, 0, 0);
 }
 
 /* ---------- Header ---------- */
@@ -39,6 +40,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    position: relative;
+    z-index: 1000;
 }
 
 .logo {
@@ -63,42 +66,79 @@ header {
     font-size: .9rem;
 }
 
-/* ---------- Navigation ---------- */
+/* ---------- Navigation - Simplified Toggle ---------- */
 
 #menuButton {
     background: none;
-    border: none;
+    border: 2px solid transparent;
     color: var(--white);
     font-size: 2rem;
     cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    line-height: 1;
 }
 
+#menuButton:hover,
+#menuButton:focus {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Navigation hidden by default on mobile */
 #navigation {
     display: none;
-    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
     background: var(--primary-color);
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    z-index: 999;
 }
 
+/* Show navigation when .open class is added */
 #navigation.open {
-    display: flex;
-    flex-direction: column;
+    display: block;
+}
+
+#navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 #navigation li {
-    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#navigation li:first-child {
+    border-top: none;
 }
 
 #navigation a {
     display: block;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     color: var(--white);
     text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
 }
 
 #navigation a:hover,
+#navigation a:focus {
+    background: var(--white);
+    color: var(--primary-color);
+}
+
 #navigation a.active {
     background: var(--white);
     color: var(--primary-color);
+    font-weight: 700;
 }
 
 /* ---------- Main ---------- */
@@ -128,6 +168,7 @@ main h1 {
     background: var(--primary-color);
     color: var(--white);
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 
 .menu button:hover {
@@ -140,7 +181,7 @@ main h1 {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto 2rem;   /* centers the hero */
+    margin: 0 auto 2rem;
     border-radius: 16px;
     overflow: hidden;
 }
@@ -148,7 +189,7 @@ main h1 {
 .hero img {
     display: block;
     width: 100%;
-    height: 400px;          /* adjust as needed */
+    height: 400px;
     object-fit: cover;
 }
 
@@ -157,16 +198,14 @@ main h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     width: min(90%, 450px);
-
-    background: rgba(13, 59, 102, 0.8);
+    background: rgba(13, 59, 102, 0.85);
     color: white;
-
     padding: 1.5rem;
     border-radius: 15px;
     text-align: center;
 }
+
 .cta {
     display: inline-block;
     background: var(--accent-color);
@@ -175,6 +214,7 @@ main h1 {
     border-radius: 999px;
     text-decoration: none;
     font-weight: 700;
+    transition: background 0.2s ease;
 }
 
 .cta:hover,
@@ -265,6 +305,7 @@ main h1 {
     text-decoration: none;
     font-weight: 700;
     box-shadow: 0 4px 10px rgba(13, 59, 102, 0.12);
+    transition: background 0.2s ease;
 }
 
 .cta-button:hover,
@@ -302,6 +343,7 @@ main h1 {
     margin-bottom: 0.75rem;
     border-radius: 8px;
 }
+
 .spotlight h3 {
     margin: 0 0 0.5rem;
 }

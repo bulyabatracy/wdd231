@@ -6,11 +6,58 @@ const menuButton = document.querySelector("#menuButton");
 const navigation = document.querySelector("#navigation");
 
 // ------------------------------
-// Mobile Navigation
+// Mobile Navigation - SIMPLIFIED
 // ------------------------------
-menuButton.addEventListener("click", () => {
-    navigation.classList.toggle("open");
+
+function toggleMenu() {
+    navigation.classList.toggle('open');
+    menuButton.textContent = navigation.classList.contains('open') ? '✕' : '☰';
+}
+
+function closeMenu() {
+    navigation.classList.remove('open');
+    menuButton.textContent = '☰';
+}
+
+if (menuButton) {
+    menuButton.addEventListener('click', toggleMenu);
+}
+
+document.querySelectorAll('#navigation a').forEach(link => {
+    link.addEventListener('click', closeMenu);
 });
+
+document.addEventListener('click', (event) => {
+    const isClickInside = menuButton?.contains(event.target) || navigation?.contains(event.target);
+    if (!isClickInside && navigation?.classList.contains('open')) {
+        closeMenu();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navigation?.classList.contains('open')) {
+        closeMenu();
+        menuButton?.focus();
+    }
+});
+
+// ------------------------------
+// Active page highlighting
+// ------------------------------
+
+function setActiveNavLink() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('#navigation a').forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', setActiveNavLink);
 
 // ------------------------------
 // Grid and List Buttons
@@ -86,7 +133,7 @@ function displayMembers(members) {
         const link = document.createElement("a");
         link.href = member.website;
         link.target = "_blank";
-        link.rel = "noopener";
+        link.rel = "no opener";
         link.textContent = "Visit Website";
 
         website.appendChild(link);

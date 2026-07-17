@@ -1,20 +1,69 @@
 // ===============================
-// Mobile navigation
+// Mobile Navigation - SIMPLIFIED
 // ===============================
 
 const menuButton = document.querySelector('#menuButton');
 const navigation = document.querySelector('#navigation');
 
-menuButton?.addEventListener('click', () => {
-    const isOpen = navigation.classList.toggle('open');
-    menuButton.setAttribute('aria-expanded', String(isOpen));
+function toggleMenu() {
+    navigation.classList.toggle('open');
+    menuButton.textContent = navigation.classList.contains('open') ? '✕' : '☰';
+}
+
+function closeMenu() {
+    navigation.classList.remove('open');
+    menuButton.textContent = '☰';
+}
+
+// Toggle on button click
+if (menuButton) {
+    menuButton.addEventListener('click', toggleMenu);
+}
+
+// Close when a nav link is clicked
+document.querySelectorAll('#navigation a').forEach(link => {
+    link.addEventListener('click', closeMenu);
 });
+
+// Close when clicking outside
+document.addEventListener('click', (event) => {
+    const isClickInside = menuButton?.contains(event.target) || navigation?.contains(event.target);
+    if (!isClickInside && navigation?.classList.contains('open')) {
+        closeMenu();
+    }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navigation?.classList.contains('open')) {
+        closeMenu();
+        menuButton?.focus();
+    }
+});
+
+// ===============================
+// Active page highlighting
+// ===============================
+
+function setActiveNavLink() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('#navigation a').forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', setActiveNavLink);
 
 // ===============================
 // Weather API
 // ===============================
 
-const apiKey = 'f874dbe5fcef8e81d73a105cc78f4bf8'; // Replace with your OpenWeatherMap API key
+const apiKey = 'f874dbe5fcef8e81d73a105cc78f4bf8';
 const lat = 0.3476;
 const lon = 32.5825;
 const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
@@ -142,7 +191,7 @@ function displaySpotlights(members) {
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>${member.phone}</p>
-            <p><a href="${member.website}" target="_blank" rel="noopener">Visit Website</a></p>
+            <p><a href="${member.website}" target="_blank" rel=" no opener">Visit Website</a></p>
             <p><strong>${member.membership === 3 ? 'Gold' : 'Silver'} Member</strong></p>
         `;
 
