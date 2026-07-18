@@ -239,7 +239,7 @@ main h1 {
     padding: .85rem 1.2rem;
 
     background: var(--accent-color);
-    color: var(--primary-color);
+    color: rgb(6, 6, 142);
 
     border-radius: 999px;
 
