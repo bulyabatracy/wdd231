@@ -36,12 +36,12 @@
 
     #navigation a:hover,
     #navigation a:focus {
-        background: var(--white);
+        background: var(--light-text);
         color: var(--primary-color);
     }
 
     #navigation a.active {
-        background: var(--white);
+        background: var(--light-text);
         color: var(--primary-color);
         font-weight: 700;
     }
