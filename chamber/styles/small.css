@@ -1,18 +1,35 @@
+/* ==========================================
+   Root Variables
+========================================== */
 :root {
     --primary-color: #0d3b66;
     --secondary-color: #f4f4f4;
     --accent-color: #faf0ca;
     --text-color: #222;
     --border-color: #ddd;
-    --white: #ffffff;
+    --white: #fff;
+
+    --primary-hover: #155799;
+    --accent-hover: #f6d97d;
+
+    --radius: 8px;
+    --transition: 0.3s ease;
 }
 
-* {
+/* ==========================================
+   Reset
+========================================== */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ==========================================
+   Base Styles
+========================================== */
 body {
     font-family: "Roboto", Arial, sans-serif;
     background: var(--white);
@@ -20,34 +37,48 @@ body {
     line-height: 1.6;
 }
 
-/* ---------- Accessibility ---------- */
+img {
+    display: block;
+    max-width: 100%;
+}
 
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+/* ==========================================
+   Accessibility
+========================================== */
 .visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
     overflow: hidden;
     white-space: nowrap;
-    clip: rect(0, 0, 0, 0);
 }
 
-/* ---------- Header ---------- */
-
+/* ==========================================
+   Header
+========================================== */
 header {
-    background: var(--primary-color);
-    color: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
     position: relative;
+
+    padding: 1rem;
+
+    background: var(--primary-color);
+    color: var(--white);
+
     z-index: 1000;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: .75rem;
 }
 
 .logo img {
@@ -58,62 +89,60 @@ header {
 
 .site-name h2 {
     font-size: 1.25rem;
-    margin: 0;
 }
 
 .site-name p {
-    margin: 0;
     font-size: .9rem;
 }
 
-/* ---------- Navigation - Simplified Toggle ---------- */
+/* ==========================================
+   Mobile Navigation
+========================================== */
 
 #menuButton {
-    background: none;
+    background: transparent;
     border: 2px solid transparent;
     color: var(--white);
+
     font-size: 2rem;
     cursor: pointer;
-    padding: 0.5rem 0.75rem;
+
+    padding: .5rem .75rem;
     border-radius: 5px;
-    transition: all 0.3s ease;
-    z-index: 1001;
-    line-height: 1;
+
+    transition: var(--transition);
 }
 
 #menuButton:hover,
 #menuButton:focus {
-    border-color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .5);
 }
 
-/* Navigation hidden by default on mobile */
 #navigation {
     display: none;
+
     position: absolute;
     top: 100%;
     left: 0;
+
     width: 100%;
+
     background: var(--primary-color);
-    padding: 0;
-    margin: 0;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    z-index: 999;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .3);
 }
 
-/* Show navigation when .open class is added */
 #navigation.open {
     display: block;
 }
 
 #navigation ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 #navigation li {
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, .15);
 }
 
 #navigation li:first-child {
@@ -122,30 +151,31 @@ header {
 
 #navigation a {
     display: block;
+
     padding: 1rem 1.5rem;
+
     color: var(--white);
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: all 0.2s ease;
+    font-size: 1.05rem;
 }
 
 #navigation a:hover,
-#navigation a:focus {
+#navigation a:focus,
+#navigation a.active {
     background: var(--white);
     color: var(--primary-color);
 }
 
 #navigation a.active {
-    background: var(--white);
-    color: var(--primary-color);
     font-weight: 700;
 }
 
-/* ---------- Main ---------- */
+/* ==========================================
+   Main
+========================================== */
 
 main {
     max-width: 100%;
-    margin: 0 auto;
+    margin: auto;
     padding: 1rem;
 }
 
@@ -153,6 +183,343 @@ main h1 {
     text-align: center;
     margin-bottom: 1rem;
 }
+
+/* ==========================================
+   Hero
+========================================== */
+
+.hero {
+    position: relative;
+
+    max-width: 1200px;
+
+    margin: 0 auto 2rem;
+
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.hero img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.hero-copy {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(90%, 450px);
+
+    padding: 1.5rem;
+
+    background: rgba(13, 59, 102, .85);
+
+    color: var(--white);
+
+    text-align: center;
+
+    border-radius: 15px;
+}
+
+.cta {
+    display: inline-block;
+
+    margin-top: 1rem;
+
+    padding: .85rem 1.2rem;
+
+    background: var(--accent-color);
+    color: var(--primary-color);
+
+    border-radius: 999px;
+
+    font-weight: 700;
+}
+
+.cta:hover,
+.cta:focus-visible {
+    background: var(--accent-hover);
+}
+
+/* ==========================================
+   Home Grid
+========================================== */
+
+.home-grid {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ==========================================
+   Events
+========================================== */
+
+.events .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: .75rem;
+}
+
+.event-card {
+    padding: .75rem;
+
+    background: var(--white);
+
+    border: 1px solid rgba(13, 59, 102, .08);
+    border-radius: var(--radius);
+
+    text-align: left;
+}
+
+.event-card h3 {
+    margin-bottom: .35rem;
+    font-size: 1rem;
+}
+
+.event-date {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    margin-bottom: .5rem;
+
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.calendar-icon svg {
+    width: 1rem;
+    height: 1rem;
+    color: var(--primary-color);
+}
+
+/* ==========================================
+   Call To Action Section
+========================================== */
+
+.cta-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 1rem;
+    padding: 1.25rem;
+
+    background: linear-gradient(90deg,
+            var(--primary-color),
+            var(--primary-hover));
+
+    color: var(--white);
+
+    border-radius: 10px;
+}
+
+.cta-content {
+    max-width: 900px;
+    text-align: center;
+}
+
+.cta-content h2 {
+    margin-bottom: .4rem;
+    font-size: 1.4rem;
+}
+
+.cta-content p {
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.cta-button {
+    display: inline-block;
+
+    padding: .7rem 1.2rem;
+
+    background: var(--accent-color);
+    color: var(--primary-color);
+
+    border-radius: 999px;
+
+    font-weight: bold;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+    background: var(--accent-hover);
+}
+
+/* ==========================================
+   Spotlight Members
+========================================== */
+
+.spotlights {
+    display: grid;
+    gap: 1rem;
+}
+
+.spotlight {
+    padding: 1rem;
+
+    background: var(--white);
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+
+    text-align: center;
+}
+
+.spotlight img {
+    width: 150px;
+    height: auto;
+
+    margin: 0 auto .75rem;
+
+    border-radius: var(--radius);
+}
+
+.spotlight h3 {
+    margin-bottom: .5rem;
+}
+
+.spotlight p {
+    margin: .4rem 0;
+}
+
+.spotlight a {
+    display: inline-block;
+
+    margin-top: .5rem;
+
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.spotlight a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   Weather
+========================================== */
+
+#weather p {
+    margin: .4rem 0;
+}
+
+#weather ul {
+    list-style: none;
+    margin-top: .75rem;
+}
+
+#weather li {
+    display: grid;
+    grid-template-columns: auto 48px auto;
+
+    gap: .5rem;
+
+    align-items: center;
+
+    padding: .5rem 0;
+
+    border-top: 1px solid rgba(13, 59, 102, .1);
+}
+
+#weather li:first-child {
+    border-top: none;
+}
+
+.forecast-date,
+.forecast-temp {
+    font-weight: bold;
+}
+
+.forecast-temp {
+    color: var(--primary-color);
+}
+
+.forecast-desc {
+    grid-column: 1 / -1;
+    color: #555;
+    font-size: .95rem;
+}
+
+/* ==========================================
+   Weather Grid
+========================================== */
+
+#weather .weather-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 1rem;
+}
+
+#weather .current-weather,
+#weather .forecast-wrapper {
+    text-align: left;
+}
+
+#weather .forecast-wrapper #forecast {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+
+    gap: .5rem;
+
+    list-style: none;
+
+    justify-content: start;
+}
+
+#weather .forecast-wrapper #forecast li {
+    padding: .5rem;
+
+    background: var(--white);
+
+    border: 1px solid rgba(13, 59, 102, .08);
+    border-radius: 6px;
+
+    text-align: center;
+}
+
+/* ==========================================
+   Small Screen Adjustments
+========================================== */
+
+@media (max-width: 600px) {
+
+    .cta-section {
+        padding: 1rem;
+    }
+
+    .cta-content h2 {
+        font-size: 1.2rem;
+    }
+
+    #weather .weather-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #weather .forecast-wrapper #forecast {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .events .events-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   Directory View Controls
+========================================== */
 
 .menu {
     display: flex;
@@ -164,295 +531,23 @@ main h1 {
 .menu button {
     padding: .75rem 1.25rem;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--radius);
+
     background: var(--primary-color);
     color: var(--white);
+
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: var(--transition);
 }
 
-.menu button:hover {
-    background: #155799;
+.menu button:hover,
+.menu button:focus {
+    background: var(--primary-hover);
 }
 
-/* ---------- Home Page ---------- */
-
-.hero {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 2rem;
-    border-radius: 16px;
-    overflow: hidden;
-}
-
-.hero img {
-    display: block;
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-}
-
-.hero-copy {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: min(90%, 450px);
-    background: rgba(13, 59, 102, 0.85);
-    color: white;
-    padding: 1.5rem;
-    border-radius: 15px;
-    text-align: center;
-}
-
-.cta {
-    display: inline-block;
-    background: var(--accent-color);
-    color: var(--primary-color);
-    padding: 0.85rem 1.2rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: background 0.2s ease;
-}
-
-.cta:hover,
-.cta:focus-visible {
-    background: #f6d97d;
-}
-
-.home-grid {
-    display: grid;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-/* Events grid inside the home grid */
-.events .events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.75rem;
-}
-
-.event-card {
-    text-align: left;
-    padding: 0.75rem;
-    border-radius: 8px;
-    border: 1px solid rgba(13, 59, 102, 0.06);
-    background: var(--white);
-}
-
-.event-card h3 {
-    margin: 0 0 0.25rem 0;
-    font-size: 1rem;
-}
-
-.event-date {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--primary-color);
-    font-weight: 700;
-    margin: 0.25rem 0 0.5rem 0;
-}
-
-.calendar-icon svg {
-    width: 1rem;
-    height: 1rem;
-    color: var(--primary-color);
-}
-
-@media (max-width: 480px) {
-    .events .events-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ---------- Call To Action ---------- */
-.cta-section {
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 10px;
-    background: linear-gradient(90deg, rgba(13, 59, 102, 0.95), rgba(21, 87, 153, 0.95));
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cta-content {
-    max-width: 900px;
-    text-align: center;
-}
-
-.cta-content h2 {
-    margin: 0 0 0.25rem 0;
-    font-size: 1.25rem;
-}
-
-.cta-content p {
-    margin: 0 0 0.5rem 0;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.cta-button {
-    display: inline-block;
-    background: var(--accent-color);
-    color: var(--primary-color);
-    padding: 0.6rem 1rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 700;
-    box-shadow: 0 4px 10px rgba(13, 59, 102, 0.12);
-    transition: background 0.2s ease;
-}
-
-.cta-button:hover,
-.cta-button:focus-visible {
-    background: #f6d97d;
-}
-
-@media (max-width: 600px) {
-    .cta-content h2 {
-        font-size: 1.1rem;
-    }
-
-    .cta-section {
-        padding: 0.75rem;
-    }
-}
-
-.spotlights {
-    display: grid;
-    gap: 1rem;
-}
-
-.spotlight {
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1rem;
-    background: var(--white);
-    text-align: center;
-}
-
-.spotlight img {
-    max-width: 150px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 0.75rem;
-    border-radius: 8px;
-}
-
-.spotlight h3 {
-    margin: 0 0 0.5rem;
-}
-
-.spotlight p {
-    margin: 0.4rem 0;
-    line-height: 1.4;
-}
-
-.spotlight a {
-    color: var(--primary-color);
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 0.5rem;
-}
-
-.spotlight a:hover {
-    text-decoration: underline;
-}
-
-#weather ul {
-    list-style: none;
-    padding: 0;
-    margin: 0.75rem 0 0;
-}
-
-#weather li {
-    display: grid;
-    grid-template-columns: auto 48px auto;
-    gap: 0.5rem;
-    align-items: center;
-    padding: 0.5rem 0;
-    border-top: 1px solid rgba(13, 59, 102, 0.1);
-}
-
-#weather li:first-child {
-    border-top: none;
-}
-
-.forecast-date {
-    font-weight: 700;
-}
-
-.forecast-temp {
-    color: var(--primary-color);
-    font-weight: 700;
-}
-
-.forecast-desc {
-    grid-column: 1 / -1;
-    font-size: 0.95rem;
-    color: #555;
-}
-
-#weather p {
-    margin: 0.4rem 0;
-}
-
-/* Weather grid: two columns -> current weather | 3-day forecast */
-#weather .weather-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 1rem;
-    align-items: start;
-}
-
-#weather .current-weather {
-    text-align: left;
-}
-
-#weather .forecast-wrapper {
-    text-align: left;
-}
-
-/* Make weather grid single column on small viewports */
-@media (max-width: 600px) {
-    #weather .weather-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Forecast list: display 3-day items in a grid */
-#weather .forecast-wrapper #forecast {
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
-    gap: 0.5rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    justify-content: start;
-    align-items: start;
-}
-
-#weather .forecast-wrapper #forecast li {
-    border: 1px solid rgba(13, 59, 102, 0.08);
-    padding: 0.4rem;
-    border-radius: 6px;
-    text-align: center;
-    background: #fff;
-    font-size: 0.95rem;
-}
-
-@media (max-width: 600px) {
-    #weather .forecast-wrapper #forecast {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ---------- Grid ---------- */
+/* ==========================================
+   Grid View
+========================================== */
 
 .grid {
     display: grid;
@@ -460,39 +555,46 @@ main h1 {
     gap: 1rem;
 }
 
-.card {
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
+.card,
+.spotlight {
     background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1rem;
+}
+
+.card {
+    text-align: center;
 }
 
 .card img {
     width: 150px;
     height: 100px;
+    margin: 0 auto 1rem;
     object-fit: contain;
-    margin-bottom: 1rem;
 }
 
 .card h3 {
     margin-bottom: .5rem;
+    color: var(--primary-color);
 }
 
 .card p {
-    margin: .3rem 0;
+    margin: .35rem 0;
 }
 
 .card a {
     color: var(--primary-color);
-    text-decoration: none;
+    font-weight: 600;
 }
 
 .card a:hover {
     text-decoration: underline;
 }
 
-/* ---------- List View ---------- */
+/* ==========================================
+   List View
+========================================== */
 
 .list {
     display: flex;
@@ -508,51 +610,80 @@ main h1 {
     display: none;
 }
 
-/* ---------- Footer ---------- */
+/* ==========================================
+   Footer
+========================================== */
 
 footer {
     margin-top: 2rem;
+    padding: 2rem 1rem;
+
+    display: grid;
+    gap: 2rem;
+
     background: var(--primary-color);
     color: var(--white);
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: center;
+
     text-align: center;
 }
 
-.footer-contact p {
-    margin: .3rem 0;
-    gap: 1rem;
-    text-align: left;
-    margin-left: 6rem;
+.footer-contact,
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
 }
 
 .footer-contact h2 {
-
-    margin-left: 6rem;
-    margin-top: 0.5rem;
+    margin-bottom: .5rem;
 }
 
+.footer-contact p,
 .footer-info p {
-    margin: .3rem 0;
-    text-align: right;
-    margin-right: 6rem;
+    margin: 0;
 }
+
+/* ==========================================
+   Social Media
+========================================== */
 
 .social {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
-    text-align: center;
+}
+
+.social a {
+    display: inline-flex;
 }
 
 .social img {
     width: 45px;
     height: 45px;
-    transition: transform .3s ease;
+    transition: transform var(--transition);
 }
 
 .social img:hover {
     transform: scale(1.1);
+}
+
+/* ==========================================
+   Mobile Footer
+========================================== */
+
+@media (max-width: 600px) {
+
+    footer {
+        text-align: center;
+    }
+
+    .footer-contact,
+    .footer-info {
+        align-items: center;
+    }
+
+    .social {
+        flex-wrap: wrap;
+    }
 }
