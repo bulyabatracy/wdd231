@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kampala Chamber of Commerce | Join</title>
+
+    <meta name="description" content="Browse businesses and members of the Kampala Chamber of Commerce.">
+    <meta name="author" content="Tracy Bulyaba">
+    <meta name="theme-color" content="#0b4f6c">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kampala Chamber of Commerce Directory">
+    <meta property="og:description" content="Find businesses and members of the Kampala Chamber of Commerce.">
+    <meta property="og:image" content="https://bulyabatracy.github.io/wdd231/chamber/images/logo.webp">
+    <meta property="og:url" content="https://bulyabatracy.github.io/wdd231/chamber/join.html">
+    <meta property="og:type" content="website">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bulyabatracy.github.io/wdd231/chamber/join.html">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Preload Logo -->
+    <link rel="preload" href="images/logo.webp" as="image">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Scripts -->
+    <script src="scripts/thankyou.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+
+            <img src="images/logo.webp" alt="Kampala Chamber of Commerce" width="60" height="60" loading="eager"
+                fetchpriority="high">
+
+            <div class="site-name">
+                <h2>Kampala Chamber</h2>
+                <p>of Commerce</p>
+            </div>
+
+        </div>
+
+        <button id="menuButton" aria-label="Toggle navigation menu" aria-controls="navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="navigation">
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li>
+                    <a href="directory.html">Directory</a>
+                </li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="join.html" class="active" aria-current="page">Join</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+        <h1>Become a Member</h1>
+        <div class="join-layout">
+            <!-- ===== FORM ===== -->
+            <div>
+                <h2 class="section-heading">Membership Application Form</h2>
+                <div class="form-wrapper">
+                    <form id="joinForm" action="thankyou.html" method="get">
+                        <!-- First Name -->
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required autocomplete="given-name"
+                                placeholder="e.g. Jane" title="Your first name" />
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required autocomplete="family-name"
+                                placeholder="e.g. Doe" title="Your last name" />
+                        </div>
+
+                        <!-- Organizational Title (with pattern) -->
+                        <div class="form-group">
+                            <label for="orgTitle">Organizational Title</label>
+                            <input type="text" id="orgTitle" name="orgTitle" autocomplete="organization-title"
+                                pattern="[A-Za-z\- ]{7,}" title="Minimum 7 characters, letters, hyphens and spaces only"
+                                placeholder="e.g. Director of Operations" />
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required autocomplete="email"
+                                placeholder="john89@gmail.com" title="Enter a valid email address" />
+                        </div>
+
+                        <!-- Mobile Phone -->
+                        <div class="form-group">
+                            <label for="phone">Mobile Phone *</label>
+                            <input type="tel" id="phone" name="phone" required autocomplete="tel"
+                                placeholder="987-555-1234" title="Enter phone number" />
+                        </div>
+
+                        <!-- Business / Organization -->
+                        <div class="form-group">
+                            <label for="business">Business / Organization *</label>
+                            <input type="text" id="business" name="business" required autocomplete="organization"
+                                placeholder="Your company name" title="Organization name" />
+                        </div>
+
+                        <!-- Membership Level (select) -->
+                        <div class="form-group">
+                            <label for="membershipLevel">Membership Level *</label>
+                            <select id="membershipLevel" name="membershipLevel" required
+                                title="Choose a membership level">
+                                <option value="">— Select —</option>
+                                <option value="np">NP Membership (non-profit, no fee)</option>
+                                <option value="bronze">Bronze Membership</option>
+                                <option value="silver">Silver Membership</option>
+                                <option value="gold">Gold Membership</option>
+                            </select>
+                        </div>
+
+                        <!-- Organization Description -->
+                        <div class="form-group">
+                            <label for="description">Organization Description</label>
+                            <textarea id="description" name="description" title="Brief description of your organization"
+                                placeholder="Tell us about your business..."></textarea>
+                        </div>
+
+                        <!-- Timestamp (hidden) -->
+                        <input type="hidden" id="timestamp" name="timestamp" value="2026-07-20T08:30:00" />
+
+                        <!-- Submit -->
+                        <button type="submit" class="submit-btn">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ===== MEMBERSHIP CARDS (4) ===== -->
+            <div>
+                <h2 class="section-heading">Membership Levels</h2>
+                <div class="cards-wrapper">
+                    <div class="membership-card">
+                        <h3>Non Profit</h3>
+                        <p>NP · no fee</p>
+                        <button class="learn-more-btn" data-modal="npModal">Learn More</button>
+                    </div>
+                    <div class="membership-card">
+                        <h3>Bronze</h3>
+                        <p>Entry level</p>
+                        <button class="learn-more-btn" data-modal="bronzeModal">Learn More</button>
+                    </div>
+                    <div class="membership-card">
+                        <h3>Silver</h3>
+                        <p>Mid tier</p>
+                        <button class="learn-more-btn" data-modal="silverModal">Learn More</button>
+                    </div>
+                    <div class="membership-card">
+                        <h3>Gold</h3>
+                        <p>Premium</p>
+                        <button class="learn-more-btn" data-modal="goldModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- ============================================================
+  MODALS
+  ============================================================ -->
+    <!-- NP Modal -->
+    <div class="modal-overlay" id="npModal">
+        <div class="modal-box">
+            <h2>💚 Non Profit Membership</h2>
+            <p><strong>No fee</strong> – ideal for charitable organizations.</p>
+            <ul>
+                <li>✔ Listing in online directory</li>
+                <li>✔ Access to community events</li>
+                <li>✔ Newsletter subscription</li>
+                <li>✔ 2 free event tickets per year</li>
+            </ul>
+            <button class="modal-close" data-close="npModal">Close</button>
+        </div>
+    </div>
+
+    <!-- Bronze Modal -->
+    <div class="modal-overlay" id="bronzeModal">
+        <div class="modal-box">
+            <h2>🥉 Bronze Membership</h2>
+            <p><strong>$150/year</strong> – great for small businesses.</p>
+            <ul>
+                <li>✔ Directory listing + logo</li>
+                <li>✔ 1 free event ticket per quarter</li>
+                <li>✔ 10% discount on training</li>
+                <li>✔ Monthly newsletter highlight</li>
+            </ul>
+            <button class="modal-close" data-close="bronzeModal">Close</button>
+        </div>
+    </div>
+
+    <!-- Silver Modal -->
+    <div class="modal-overlay" id="silverModal">
+        <div class="modal-box">
+            <h2>🥈 Silver Membership</h2>
+            <p><strong>$350/year</strong> – enhanced visibility.</p>
+            <ul>
+                <li>✔ Bronze benefits +</li>
+                <li>✔ Spotlight position on home page (1 month)</li>
+                <li>✔ 20% off all events</li>
+                <li>✔ Priority training registration</li>
+                <li>✔ Featured in social media posts</li>
+            </ul>
+            <button class="modal-close" data-close="silverModal">Close</button>
+        </div>
+    </div>
+
+    <!-- Gold Modal -->
+    <div class="modal-overlay" id="goldModal">
+        <div class="modal-box">
+            <h2>🥇 Gold Membership</h2>
+            <p><strong>$600/year</strong> – maximum exposure.</p>
+            <ul>
+                <li>✔ All Silver benefits +</li>
+                <li>✔ Home page spotlight (3 months)</li>
+                <li>✔ Free admission to all events</li>
+                <li>✔ Exclusive networking dinners</li>
+                <li>✔ 50% off advertising</li>
+                <li>✔ Dedicated account manager</li>
+            </ul>
+            <button class="modal-close" data-close="goldModal">Close</button>
+        </div>
+    </div>
+
+
+    <footer>
+
+        <section class="footer-contact">
+            <h2>Kampala Chamber of Commerce</h2>
+            <p>Plot 2 Parliament Avenue</p>
+            <p>Kampala, Uganda</p>
+            <p>info@kampalachamber.ug</p>
+            <p>+256 414 000000</p>
+
+        </section>
+
+        <section class="social">
+
+            <h2 class="visually-hidden">
+                Social Media
+            </h2>
+
+            <a href="https://github.com/bulyabatracy" target="_blank" rel="noopener noreferrer"
+                aria-label="Visit Tracy Bulyaba on GitHub">
+
+                <img src="images/github-logo.webp" alt="GitHub" width="32" height="32" loading="lazy">
+
+            </a>
+
+            <a href="https://linkedin.com/in/bulyabatracy" target="_blank" rel="noopener noreferrer"
+                aria-label="Visit Tracy Bulyaba on LinkedIn">
+
+                <img src="images/linkedin.webp" alt="LinkedIn" width="32" height="32" loading="lazy">
+
+            </a>
+
+            <a href="https://x.com/bulyabatracy" target="_blank" rel="noopener noreferrer"
+                aria-label="Visit Tracy Bulyaba on X">
+
+                <img src="images/x-logo.webp" alt="X" width="32" height="32" loading="lazy">
+
+            </a>
+
+        </section>
+
+        <section class="footer-info">
+
+            <h2 class="visually-hidden">
+                Project Information
+            </h2>
+
+            <p>WDD 231 Chamber Project</p>
+            <p>Tracy Bulyaba</p>
+
+            <p>
+                &copy;
+                <span id="year"></span>
+                Kampala Chamber of Commerce
+            </p>
+
+            <p>
+                Last Modified:
+                <span id="lastModified"></span>
+            </p>
+
+        </section>
+
+    </footer>
+
+</body>
+
+</html>

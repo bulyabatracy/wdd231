@@ -81,4 +81,14 @@
     .footer-info {
         text-align: right;
     }
+
+    /* Join Form Layout */
+    .join-layout {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 2rem;
+    }
+
+    .cards-wrapper {
+        grid-template-columns: 1fr;
+    }
 }
