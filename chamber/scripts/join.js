@@ -1,32 +1,42 @@
 // ===============================
 // Responsive Navigation
 // ===============================
-const menuButton = document.getElementById("menuButton");
-const navigation = document.getElementById("navigation");
+document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById("menuButton");
+    const navigation = document.getElementById("navigation");
 
-menuButton.addEventListener("click", () => {
-    navigation.classList.toggle("open");
+    if (menuButton && navigation) {
+        menuButton.addEventListener("click", () => {
+            navigation.classList.toggle("open");
 
-    const expanded = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", !expanded);
+            const expanded = menuButton.getAttribute("aria-expanded") === "true";
+            menuButton.setAttribute("aria-expanded", !expanded);
 
-    menuButton.textContent = navigation.classList.contains("open") ? "✕" : "☰";
+            menuButton.textContent = navigation.classList.contains("open") ? "✕" : "☰";
+        });
+    }
+
+    // ===============================
+    // Footer Information
+    // ===============================
+    const yearElement = document.getElementById("year");
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+    const lastModifiedElement = document.getElementById("lastModified");
+    if (lastModifiedElement) {
+        lastModifiedElement.textContent = document.lastModified;
+    }
+
+    // ===============================
+    // Hidden Timestamp
+    // ===============================
+    const timestamp = document.getElementById("timestamp");
+    if (timestamp) {
+        timestamp.value = new Date().toISOString();
+    }
 });
-
-// ===============================
-// Footer Information
-// ===============================
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = document.lastModified;
-
-// ===============================
-// Hidden Timestamp
-// ===============================
-const timestamp = document.getElementById("timestamp");
-
-if (timestamp) {
-    timestamp.value = new Date().toISOString();
-}
 
 // ===============================
 // Membership Modals - Learn More
