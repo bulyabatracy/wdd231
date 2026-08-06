@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Kampala | Contact Us</title>
+
+    <meta name="description"
+        content="Contact Explore Kampala to ask questions, request travel information, or plan your visit to Uganda's capital city.">
+
+    <meta name="author" content="Tracy Bulyaba">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Explore Kampala">
+    <meta property="og:description"
+        content="Get in touch with Explore Kampala for travel information and tour inquiries.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/hero.webp">
+
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script type="module" src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            <h1>Explore Kampala</h1>
+        </div>
+
+        <button id="menu" aria-label="Open Navigation">
+            ☰
+        </button>
+
+        <nav id="navigation">
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="attractions.html">Attractions</a></li>
+
+                <li><a href="contact.html" class="active">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="page-banner">
+
+            <h2>Contact Explore Kampala</h2>
+
+            <p>
+
+                Planning a trip to Kampala? Fill out the form below and
+                we'll get back to you with travel information and recommendations.
+
+            </p>
+
+        </section>
+
+        <section class="contact-container">
+
+            <form method="get" action="thankyou.html">
+
+                <fieldset>
+
+                    <legend>Personal Information</legend>
+
+                    <label for="fullname">
+                        Full Name *
+                    </label>
+
+                    <input type="text" id="fullname" name="fullname" required autocomplete="name">
+
+                    <label for="email">
+                        Email Address *
+                    </label>
+
+                    <input type="email" id="email" name="email" required autocomplete="email">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input type="tel" id="phone" name="phone" autocomplete="tel">
+
+                    <label for="country">
+                        Country
+                    </label>
+
+                    <input type="text" id="country" name="country">
+
+                </fieldset>
+
+                <fieldset>
+
+                    <legend>Trip Information</legend>
+
+                    <label for="date">
+                        Planned Visit Date
+                    </label>
+
+                    <input type="date" id="date" name="date">
+
+                    <label for="visitors">
+                        Number of Visitors
+                    </label>
+
+                    <input type="number" id="visitors" name="visitors" min="1" max="50" value="1">
+
+                    <label for="interest">
+                        Main Interest
+                    </label>
+
+                    <select id="interest" name="interest">
+
+                        <option value="">Choose One</option>
+
+                        <option value="culture">Culture</option>
+
+                        <option value="history">History</option>
+
+                        <option value="nature">Nature</option>
+
+                        <option value="food">Food</option>
+
+                        <option value="shopping">Shopping</option>
+
+                    </select>
+
+                </fieldset>
+
+                <fieldset>
+
+                    <legend>Additional Information</legend>
+
+                    <label for="message">
+                        Your Message
+                    </label>
+
+                    <textarea id="message" name="message" rows="6"
+                        placeholder="Tell us how we can help you..."></textarea>
+
+                </fieldset>
+
+                <fieldset>
+
+                    <legend>Newsletter</legend>
+
+                    <label>
+
+                        <input type="checkbox" name="newsletter" value="yes">
+
+                        I would like to receive travel updates and newsletters.
+
+                    </label>
+
+                </fieldset>
+
+                <input type="submit" value="Send Inquiry" class="button">
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            &copy; 2026 Explore Kampala | Tracy Bulyaba
+        </p>
+
+        <p>
+
+            <a href="attributions.html">
+                Attributions
+            </a>
+
+            |
+
+            <a href="https://youtu.be/YOUR_VIDEO_LINK">
+                Project Video
+            </a>
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

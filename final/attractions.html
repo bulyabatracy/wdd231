@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Kampala | Attractions</title>
+
+    <meta name="description"
+        content="Discover the best attractions, cultural sites, restaurants, and experiences in Kampala, Uganda.">
+
+    <meta name="author" content="Tracy Bulyaba">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Explore Kampala Attractions">
+    <meta property="og:description"
+        content="Discover Kampala's top tourist attractions and cultural experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/hero.webp">
+
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script type="module" src="js/attractions.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            <h1>Explore Kampala</h1>
+        </div>
+
+        <button id="menu" aria-label="Open Navigation">
+            ☰
+        </button>
+
+        <nav id="navigation">
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="attractions.html" class="active">Attractions</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="page-banner">
+
+            <h2>Top Attractions in Kampala</h2>
+
+            <p>
+                Browse our collection of exciting places to visit.
+                Click on any attraction to view more information
+                and save your favourites.
+            </p>
+
+        </section>
+
+        <!-- Search -->
+
+        <section class="search-section">
+
+            <label for="search">
+                Search Attractions
+            </label>
+
+            <input
+                type="search"
+                id="search"
+                placeholder="Search by attraction name..."
+            >
+
+        </section>
+
+        <!-- Category Filter -->
+
+        <section class="filter-section">
+
+            <label for="category">
+                Filter by Category
+            </label>
+
+            <select id="category">
+
+                <option value="all">All Attractions</option>
+
+                <option value="Historical">Historical</option>
+
+                <option value="Cultural">Cultural</option>
+
+                <option value="Religious">Religious</option>
+
+                <option value="Nature">Nature</option>
+
+                <option value="Museum">Museum</option>
+
+            </select>
+
+        </section>
+
+        <!-- Dynamic Cards -->
+
+        <section>
+
+            <h2>Explore Attractions</h2>
+
+            <div id="attractions-container" class="card-grid">
+
+                <!-- JavaScript will generate
+                     at least 15 attraction cards here -->
+
+            </div>
+
+        </section>
+
+        <!-- Favorites -->
+
+        <section class="favorites">
+
+            <h2>Your Favourite Attractions</h2>
+
+            <div id="favorites">
+
+                <p>
+                    You haven't added any favourites yet.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Accessible Modal -->
+
+    <dialog id="attractionModal">
+
+        <button
+            id="closeModal"
+            aria-label="Close dialog">
+            ✕
+        </button>
+
+        <div id="modalContent">
+
+            <!-- JavaScript inserts details here -->
+
+        </div>
+
+    </dialog>
+
+    <footer>
+
+        <p>
+
+            &copy; 2026 Explore Kampala
+
+        </p>
+
+        <p>
+
+            <a href="attributions.html">
+                Attributions
+            </a>
+
+            |
+
+            <a href="https://youtu.be/YOUR_VIDEO_LINK">
+                Project Video
+            </a>
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

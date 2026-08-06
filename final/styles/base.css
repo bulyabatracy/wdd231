@@ -1,0 +1,300 @@
+:root {
+    --primary-color: #2E7D32;
+    --secondary-color: #F9A825;
+    --accent-color: #D32F2F;
+    --background-color: #f8f8f8;
+    --text-color: #222222;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- BODY ---------- */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ---------- IMAGES ---------- */
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: .5rem;
+}
+
+/* ---------- LINKS ---------- */
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1rem;
+}
+
+.logo h1 {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+/* ---------- HAMBURGER ---------- */
+
+#menu {
+    display: block;
+    margin: 0 auto;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+#navigation {
+    display: none;
+}
+
+#navigation.open {
+    display: block;
+}
+
+#navigation ul {
+    list-style: none;
+}
+
+#navigation li {
+    border-top: 1px solid rgba(255,255,255,.2);
+}
+
+#navigation a {
+    display: block;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    transition: .3s;
+}
+
+#navigation a:hover {
+    background: var(--secondary-color);
+    color: black;
+}
+
+.active {
+    background: var(--accent-color);
+    color: white !important;
+}
+
+/* ---------- MAIN ---------- */
+
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.hero img {
+    border-radius: 10px;
+}
+
+.hero-text {
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+    background: rgba(0,0,0,.65);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 450px;
+}
+
+.hero-text h2 {
+    margin-bottom: .75rem;
+}
+
+.hero-text p {
+    margin-bottom: 1rem;
+}
+
+/* ---------- BUTTON ---------- */
+
+.button {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: black;
+    padding: .75rem 1.4rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* ---------- SECTIONS ---------- */
+
+section {
+    margin-bottom: 3rem;
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* ---------- FEATURED ---------- */
+
+.featured-grid,
+.why-grid,
+.card-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.featured article,
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+.featured article h3,
+.card h3 {
+    margin: .75rem 0;
+    color: var(--primary-color);
+}
+
+/* ---------- SEARCH ---------- */
+
+.search-section,
+.filter-section {
+    margin-bottom: 1.5rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: .8rem;
+    margin-top: .4rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* ---------- FORM ---------- */
+
+fieldset {
+    margin-bottom: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+legend {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+}
+
+input[type="submit"] {
+    border: none;
+    cursor: pointer;
+}
+
+/* ---------- MODAL ---------- */
+
+dialog {
+    border: none;
+    border-radius: 10px;
+    width: min(90%,700px);
+    padding: 2rem;
+}
+
+dialog::backdrop {
+    background: rgba(0,0,0,.65);
+}
+
+#closeModal {
+    float: right;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: .5rem .8rem;
+    cursor: pointer;
+}
+
+/* ---------- THANK YOU ---------- */
+
+.details p {
+    margin-bottom: .75rem;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+}
+
+/* ---------- UTILITIES ---------- */
+
+.page-banner {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.favorites {
+    margin-top: 3rem;
+}
+
+.contact-container {
+    max-width: 700px;
+    margin: auto;
+}
