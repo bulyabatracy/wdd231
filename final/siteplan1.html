@@ -5,75 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Site plan for Explore Kampala, a tourism website that helps visitors discover attractions, restaurants, accommodation, and events in Kampala, Uganda.">
+        content="Site plan for Visit Kampala Hub - a tourism website providing guides, attractions, and travel tips for visitors to Kampala and Uganda.">
     <meta name="author" content="Tracy Bulyaba">
-
-    <title>Explore Kampala | Site Plan</title>
-
+    <title>Visit Kampala Hub | Site Plan</title>
     <style>
+        /* ===== COLOR SCHEME ===== */
         :root {
-            --primary: #2E7D32;
-            --secondary: #F9A825;
-            --accent: #D32F2F;
-            --background: #FAFAFA;
-            --text: #222222;
+            --primary-color: #2E7D32;
+            /* Forest Green: Headings, Nav, Footer - represents Uganda's nature */
+            --secondary-color: #FFA000;
+            /* Amber/Gold: Accents, Buttons, Links - represents sunshine/safari */
+            --accent-color: #D32F2F;
+            /* Red: CTAs, Highlights - represents Uganda flag */
+            --background-color: #FAFAFA;
+            /* Off-white: Page Background */
+            --text-color: #212121;
+            /* Dark Gray: Body Text */
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* ===== TYPOGRAPHY ===== */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
+
+        /* Heading Font: Playfair Display - Used for h1, h2, h3. Elegant for tourism */
+        /* Body Font: Lato - Used for paragraphs, lists. Clean and readable */
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--background);
-            color: var(--text);
+            font-family: 'Lato', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
 
         header,
         footer {
-            background: var(--primary);
+            background-color: var(--primary-color);
             color: white;
+            padding: 1.5rem;
             text-align: center;
-            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+        }
+
+        header h1 {
+            color: white;
+            margin: 0;
         }
 
         main {
             max-width: 900px;
-            margin: auto;
-            padding: 20px;
+            margin: 2rem auto;
+            padding: 2rem;
             background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        h1,
-        h2 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        section {
-            margin-bottom: 35px;
-        }
-
-        ul {
-            margin-left: 25px;
+        a {
+            color: var(--secondary-color);
+            font-weight: 700;
         }
 
         .color-box {
             display: inline-block;
-            width: 40px;
-            height: 40px;
-            border: 1px solid #000;
+            width: 50px;
+            height: 50px;
             margin-right: 10px;
+            border: 1px solid #ccc;
             vertical-align: middle;
+            border-radius: 4px;
         }
 
         .wireframe {
-            border: 2px dashed var(--primary);
-            padding: 15px;
-            margin-top: 15px;
+            border: 2px dashed var(--primary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            background: #fff;
         }
 
         .mobile {
@@ -84,220 +97,139 @@
             width: 100%;
         }
 
-        .box {
-            border: 1px solid black;
-            padding: 12px;
-            margin: 6px;
-            text-align: center;
+        .btn-example {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            border-radius: 4px;
+            display: inline-block;
         }
 
-        .button {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 10px 18px;
-            border-radius: 5px;
-            font-weight: bold;
+        .btn-example:hover {
+            background-color: var(--accent-color);
+        }
+
+        hr {
+            margin: 2rem 0;
+            border: 1px solid #eee;
         }
     </style>
-
 </head>
 
 <body>
-
-<header>
-    <h1>Explore Kampala - Website Site Plan</h1>
-</header>
-
-<main>
-
-<section>
-
-<h2>Site Name</h2>
-
-<p><strong>Explore Kampala</strong></p>
-
-<p>
-The name "Explore Kampala" was chosen because it is short, memorable,
-and clearly tells visitors what the website is about. It encourages both
-local and international tourists to discover attractions, restaurants,
-hotels, cultural sites, and activities around Kampala.
-</p>
-
-<p><strong>Optional Domain:</strong> explorekampala.ug</p>
-
-</section>
-
-<hr><br>
-
-<section>
-
-<h2>Site Purpose</h2>
-
-<p>
-The purpose of this website is to provide visitors with reliable travel
-information about Kampala. Users will be able to discover popular tourist
-attractions, hotels, restaurants, transportation services, shopping areas,
-events, and travel tips. The website will also allow visitors to contact
-tour guides and make travel inquiries.
-</p>
-
-</section>
-
-<hr><br>
-
-<section>
-
-<h2>Scenarios</h2>
-
-<ul>
-<li>What are the best tourist attractions to visit in Kampala during a weekend?</li>
-
-<li>Where can I find affordable hotels and restaurants near Kampala city centre?</li>
-
-</ul>
-
-</section>
-
-<hr><br>
-
-<section>
-
-<h2>Color Schema</h2>
-
-<ul>
-
-<li>
-<span class="color-box" style="background:#2E7D32;"></span>
-<strong>Forest Green (#2E7D32)</strong> - Used for headings, navigation,
-footer, and important titles.
-</li>
-
-<li>
-<span class="color-box" style="background:#F9A825;"></span>
-<strong>Golden Yellow (#F9A825)</strong> - Used for buttons, links,
-and highlighted information.
-</li>
-
-<li>
-<span class="color-box" style="background:#D32F2F;"></span>
-<strong>Red (#D32F2F)</strong> - Used for call-to-action buttons
-and important notices.
-</li>
-
-<li>
-<span class="color-box" style="background:#FAFAFA;"></span>
-<strong>Light Gray (#FAFAFA)</strong> - Used as the page background.
-</li>
-
-</ul>
-
-<br>
-
-<p>Sample Button:</p>
-
-<br>
-
-<span class="button">Book Your Tour</span>
-
-</section>
-
-<hr><br>
-
-<section>
-
-<h2>Typography</h2>
-
-<ul>
-
-<li>
-<strong>Arial</strong> - Used for body text because it is simple,
-clean, and easy to read.
-</li>
-
-<li>
-<strong>Georgia</strong> - Used for headings because it gives the
-website a professional and elegant appearance.
-</li>
-
-</ul>
-
-</section>
-
-<hr><br>
-
-<section>
-
-<h2>Wireframe</h2>
-
-<h3>Mobile View</h3>
-
-<div class="wireframe mobile">
-
-<div class="box">Logo + Menu</div>
-
-<div class="box">Hero Image + Welcome Text</div>
-
-<div class="box">Top Attractions</div>
-
-<div class="box">Hotels</div>
-
-<div class="box">Upcoming Events</div>
-
-<div class="box">Footer</div>
-
-</div>
-
-<br>
-
-<h3>Desktop View</h3>
-
-<div class="wireframe desktop">
-
-<div class="box">Logo | Navigation Menu</div>
-
-<div class="box">Large Hero Banner</div>
-
-<div class="box">Three Attraction Cards</div>
-
-<div class="box">Hotels | Restaurants | Events</div>
-
-<div class="box">Contact Information + Footer</div>
-
-</div>
-
-</section>
-
-<hr><br>
-
-<section>
-
-<h2>Testing Plan</h2>
-
-<ul>
-
-<li>Validate HTML using the W3C Markup Validator.</li>
-
-<li>Validate CSS using the W3C CSS Validator.</li>
-
-<li>Test responsiveness on mobile, tablet, and desktop devices.</li>
-
-<li>Check accessibility using the WAVE Accessibility Tool.</li>
-
-<li>Test all links, buttons, and navigation before submission.</li>
-
-</ul>
-
-</section>
-
-</main>
-
-<footer>
-
-<p>&copy; 2026 Explore Kampala | Site Plan by Tracy Bulyaba</p>
-
-</footer>
-
+    <header>
+        <h1>Site Plan: Visit Kampala Hub</h1>
+    </header>
+
+    <main>
+        <!-- 1. SITE NAME -->
+        <section>
+            <h2>Site Name</h2>
+            <p><strong>Visit Kampala Hub</strong></p>
+            <p>This name was selected because it is clear, welcoming, and location-specific. "Visit" invites tourists,
+                "Kampala" targets the capital city, and "Hub" shows it is a central place for all travel information. It
+                is good for branding and SEO for people searching things to do in Kampala.</p>
+            <p><em>Optional Domain:</em> visitkampalahub.ug</p>
+        </section>
+
+        <!-- 2. SITE PURPOSE -->
+        <section>
+            <h2>Site Purpose</h2>
+            <p>The purpose of Visit Kampala Hub is to provide international and local tourists with a complete guide to
+                experiencing Kampala and nearby attractions in Uganda. The site will provide information on top
+                attractions, cultural experiences, restaurant recommendations, accommodation options, and safety tips.
+                It will also include an events calendar and a booking inquiry form to connect visitors with local tour
+                guides and services.</p>
+        </section>
+
+        <!-- 3. SCENARIOS -->
+        <section>
+            <h2>Scenarios - Target Audience Questions</h2>
+            <p>These are questions that represent what visitors to the site will be asking:</p>
+            <ul>
+                <li>What are the top 5 must-see attractions in Kampala for a first-time visitor with only 2 days?</li>
+                <li>Where can I find safe and affordable restaurants that serve authentic Ugandan food near the city
+                    center?</li>
+            </ul>
+        </section>
+
+        <!-- 4. COLOR SCHEME -->
+        <section>
+            <h2>Color Scheme</h2>
+            <p>The color palette is inspired by Uganda: nature, sunshine, and the national flag. It creates a warm and
+                trustworthy feeling for travelers.</p>
+            <ul>
+                <li><span class="color-box" style="background-color: #2E7D32;"></span><strong>Primary - #2E7D32 Forest
+                        Green</strong>: Used for headings, navigation background, and footer background. Represents
+                    Uganda's national parks and nature.</li>
+                <li><span class="color-box" style="background-color: #FFA000;"></span><strong>Secondary - #FFA000
+                        Amber</strong>: Used for links, buttons, and accent icons. Represents sunshine and safari
+                    experiences.</li>
+                <li><span class="color-box" style="background-color: #D32F2F;"></span><strong>Accent - #D32F2F
+                        Red</strong>: Used for call-to-action buttons and important highlights. Represents the red in
+                    the Ugandan flag.</li>
+                <li><span class="color-box" style="background-color: #FAFAFA;"></span><strong>Background - #FAFAFA
+                        Off-white</strong>: Used for the main page background to keep content readable.</li>
+            </ul>
+            <p>Example Button: <span class="btn-example">Book a Tour</span></p>
+        </section>
+
+        <!-- 5. TYPOGRAPHY -->
+        <section>
+            <h2>Typography</h2>
+            <p>Two fonts will be used to create an elegant yet friendly tourism brand.</p>
+            <ul>
+                <li><strong>Heading Font: Playfair Display</strong> - Used for all h1, h2, and h3 headings. It is
+                    elegant and evokes a sense of travel and adventure for site titles.</li>
+                <li><strong>Body Font: Lato</strong> - Used for all paragraph text, lists, and navigation links. It is
+                    highly legible for reading travel guides and details on mobile.</li>
+            </ul>
+        </section>
+
+
+        <!-- 6. WIREFRAMES -->
+        <section id="wireframes">
+            <h2>Wireframes (Home Page Layout)</h2>
+            <p><em>Note: These are pure structural sketches in black and white, focusing on layout and functionality
+                    without colors, images, or detailed design.</em></p>
+
+            <!-- Large Viewport (Desktop) -->
+            <div class="wireframe-section">
+                <h3>Large Viewport (Desktop / Tablet Landscape)</h3>
+                <div class="wireframe-box large-view">
+                    <div class="wf-header">Header (Logo + Horizontal Nav)</div>
+                    <div class="wf-hero">Hero / Welcome Banner</div>
+                    <div class="wf-main-row">
+                        <div class="wf-content">Main Content (Mission, Stats, Highlights)</div>
+                        <div class="wf-sidebar">Sidebar (Quick Links / News)</div>
+                    </div>
+                    <div class="wf-footer">Footer (Contact, Copyright, Links)</div>
+                </div>
+            </div>
+
+            <!-- Small Viewport (Mobile) -->
+            <div class="wireframe-section">
+                <h3>Small Viewport (Mobile Portrait)</h3>
+                <div class="wireframe-box small-view">
+                    <div class="wf-header">Header (Logo + Hamburger Menu)</div>
+                    <div class="wf-nav-stack">Nav (Stacked links)</div>
+                    <div class="wf-hero">Hero / Welcome Banner</div>
+                    <div class="wf-main-stack">
+                        <div class="wf-content">Main Content (Mission, Stats, Highlights)</div>
+                        <div class="wf-sidebar">Sidebar (Quick Links)</div>
+                    </div>
+                    <div class="wf-footer">Footer (Contact, Copyright)</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bulyaba Tracy | Explore Kampala Site Plan</p>
+    </footer>
 </body>
 
 </html>
