@@ -1,0 +1,149 @@
+/* =========================================
+   larger.css
+   Desktop & Tablet Styles (768px and above)
+========================================= */
+
+@media screen and (min-width: 768px) {
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    .logo h1 {
+        margin: 0;
+    }
+
+    /* ---------- NAVIGATION ---------- */
+
+    #menu {
+        display: none;
+    }
+
+    #navigation {
+        display: block !important;
+    }
+
+    #navigation ul {
+        display: flex;
+        gap: 1rem;
+    }
+
+    #navigation li {
+        border: none;
+    }
+
+    #navigation a {
+        padding: .75rem 1.25rem;
+        border-radius: 5px;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero-text {
+        max-width: 500px;
+        padding: 2rem;
+    }
+
+    .hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+
+    /* ---------- FEATURED ---------- */
+
+    .featured-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* ---------- WHY VISIT ---------- */
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ---------- ATTRACTIONS ---------- */
+
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* ---------- SEARCH & FILTER ---------- */
+
+    .search-section,
+    .filter-section {
+        max-width: 500px;
+    }
+
+    /* ---------- CONTACT FORM ---------- */
+
+    .contact-container {
+        max-width: 800px;
+    }
+
+    form {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    /* ---------- THANK YOU ---------- */
+
+    .details {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        padding: 2rem;
+    }
+
+}
+
+/* =========================================
+   Large Desktop Styles (1024px and above)
+========================================= */
+
+@media screen and (min-width: 1024px) {
+
+    main {
+        padding: 2rem;
+    }
+
+    .featured-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .hero-text {
+        max-width: 600px;
+    }
+
+    .hero-text h2 {
+        font-size: 2.8rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .page-banner {
+        padding: 2rem 0;
+    }
+
+}

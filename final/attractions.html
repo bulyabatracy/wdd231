@@ -14,18 +14,17 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Explore Kampala Attractions">
-    <meta property="og:description"
-        content="Discover Kampala's top tourist attractions and cultural experiences.">
+    <meta property="og:description" content="Discover Kampala's top tourist attractions and cultural experiences.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="images/hero.webp">
 
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
 
-    <script type="module" src="js/attractions.js" defer></script>
+    <script type="module" src="scripts/attractions.js" defer></script>
 
 </head>
 
@@ -46,10 +45,9 @@
             <ul>
 
                 <li><a href="index.html">Home</a></li>
-
                 <li><a href="attractions.html" class="active">Attractions</a></li>
-
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="attributions.html">Attributions</a></li>
 
             </ul>
 
@@ -66,9 +64,22 @@
             <p>
                 Browse our collection of exciting places to visit.
                 Click on any attraction to view more information
-                and save your favourites.
+                and save your favorites.
             </p>
 
+        </section>
+
+        <section class="attractions-intro">
+            <div>
+                <h3>Plan your Kampala adventure</h3>
+                <p>Use the filters below to discover cultural landmarks, peaceful parks, and unforgettable city views.
+                    Save your favorites as you explore.</p>
+            </div>
+            <div class="mini-highlights">
+                <span>15+ attractions</span>
+                <span>Local favorites</span>
+                <span>Easy planning</span>
+            </div>
         </section>
 
         <!-- Search -->
@@ -79,11 +90,7 @@
                 Search Attractions
             </label>
 
-            <input
-                type="search"
-                id="search"
-                placeholder="Search by attraction name..."
-            >
+            <input type="search" id="search" placeholder="Search by attraction name...">
 
         </section>
 
@@ -137,7 +144,7 @@
             <div id="favorites">
 
                 <p>
-                    You haven't added any favourites yet.
+                    You haven't added any favorites yet.
                 </p>
 
             </div>
@@ -150,9 +157,7 @@
 
     <dialog id="attractionModal">
 
-        <button
-            id="closeModal"
-            aria-label="Close dialog">
+        <button id="closeModal" aria-label="Close dialog">
             ✕
         </button>
 
@@ -167,23 +172,17 @@
     <footer>
 
         <p>
-
-            &copy; 2026 Explore Kampala
-
+            &copy; <span id="year"></span> Explore Kampala | Tracy Bulyaba
         </p>
 
         <p>
+            Last Updated:
+            <span id="lastModified"></span>
+        </p>
 
-            <a href="attributions.html">
-                Attributions
-            </a>
-
-            |
-
-            <a href="https://youtu.be/YOUR_VIDEO_LINK">
-                Project Video
-            </a>
-
+        <p>
+            <a href="attributions.html">Attributions</a> |
+            <a href="https://youtu.be/YOUR_VIDEO_LINK">Project Video</a>
         </p>
 
     </footer>

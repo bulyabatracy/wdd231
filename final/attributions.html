@@ -12,11 +12,13 @@
 
     <meta name="author" content="Tracy Bulyaba">
 
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
+
+    <script type="module" src="scripts/main.js" defer></script>
 
 </head>
 
@@ -28,17 +30,17 @@
             <h1>Explore Kampala</h1>
         </div>
 
-        <nav>
+        <button id="menu" aria-label="Open Navigation">
+            ☰
+        </button>
+
+        <nav id="navigation">
 
             <ul>
 
                 <li><a href="index.html">Home</a></li>
-
                 <li><a href="attractions.html">Attractions</a></li>
-
                 <li><a href="contact.html">Contact</a></li>
-
-                <li><a href="attributions.html" class="active">Attributions</a></li>
 
             </ul>
 
@@ -185,17 +187,17 @@
     <footer>
 
         <p>
-            &copy; 2026 Explore Kampala | Tracy Bulyaba
+            &copy; <span id="year"></span> Explore Kampala | Tracy Bulyaba
         </p>
 
         <p>
+            Last Updated:
+            <span id="lastModified"></span>
+        </p>
 
-            <a href="index.html">Home</a> |
-
-            <a href="attractions.html">Attractions</a> |
-
-            <a href="contact.html">Contact</a>
-
+        <p>
+            <a href="attributions.html">Attributions</a> |
+            <a href="https://youtu.be/YOUR_VIDEO_LINK">Project Video</a>
         </p>
 
     </footer>

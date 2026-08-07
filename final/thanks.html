@@ -16,13 +16,14 @@
     <meta property="og:description" content="Thank you for contacting Explore Kampala.">
     <meta property="og:type" content="website">
 
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
 
-    <script type="module" src="js/form.js" defer></script>
+    <script type="module" src="scripts/main.js" defer></script>
+    <script type="module" src="scripts/form.js" defer></script>
 
 </head>
 
@@ -34,15 +35,18 @@
             <h1>Explore Kampala</h1>
         </div>
 
-        <nav>
+        <button id="menu" aria-label="Open Navigation">
+            ☰
+        </button>
+
+        <nav id="navigation">
 
             <ul>
 
                 <li><a href="index.html">Home</a></li>
-
                 <li><a href="attractions.html">Attractions</a></li>
-
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="attributions.html">Attributions</a></li>
 
             </ul>
 
@@ -90,21 +94,20 @@
         </section>
 
     </main>
-
     <footer>
 
-        <p>&copy; 2026 Explore Kampala | Tracy Bulyaba</p>
+        <p>
+            &copy; <span id="year"></span> Explore Kampala | Tracy Bulyaba
+        </p>
 
         <p>
+            Last Updated:
+            <span id="lastModified"></span>
+        </p>
 
-            <a href="attributions.html">Attributions</a>
-
-            |
-
-            <a href="https://youtu.be/YOUR_VIDEO_LINK">
-                Project Video
-            </a>
-
+        <p>
+            <a href="attributions.html">Attributions</a> |
+            <a href="https://youtu.be/YOUR_VIDEO_LINK">Project Video</a>
         </p>
 
     </footer>

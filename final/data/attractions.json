@@ -1,0 +1,167 @@
+[
+    {
+        "id": 1,
+        "name": "Uganda National Mosque",
+        "category": "Religious",
+        "location": "Old Kampala",
+        "image": "images/gaddafi-mosque.webp",
+        "description": "One of the largest mosques in East Africa with breathtaking views of Kampala from its tower.",
+        "rating": 4.8,
+        "entryFee": "UGX 15,000",
+        "openingHours": "8:00 AM - 6:00 PM"
+    },
+    {
+        "id": 2,
+        "name": "Kasubi Tombs",
+        "category": "Historical",
+        "location": "Kasubi",
+        "image": "images/kasubi.webp",
+        "description": "A UNESCO World Heritage Site and the burial grounds of Buganda kings.",
+        "rating": 4.9,
+        "entryFee": "UGX 20,000",
+        "openingHours": "8:30 AM - 5:30 PM"
+    },
+    {
+        "id": 3,
+        "name": "Ndere Cultural Centre",
+        "category": "Cultural",
+        "location": "Ntinda",
+        "image": "images/ndere.webp",
+        "description": "Experience traditional Ugandan music, dance, storytelling and food.",
+        "rating": 4.8,
+        "entryFee": "UGX 50,000",
+        "openingHours": "6:00 PM - 10:00 PM"
+    },
+    {
+        "id": 4,
+        "name": "Kabaka's Palace",
+        "category": "Historical",
+        "location": "Mengo",
+        "image": "images/palace.webp",
+        "description": "The official palace of the Kabaka of Buganda with a rich royal history.",
+        "rating": 4.7,
+        "entryFee": "UGX 25,000",
+        "openingHours": "9:00 AM - 5:00 PM"
+    },
+    {
+        "id": 5,
+        "name": "Uganda Museum",
+        "category": "Museum",
+        "location": "Kitante",
+        "image": "images/museum.webp",
+        "description": "Uganda's oldest museum showcasing archaeology, history and culture.",
+        "rating": 4.6,
+        "entryFee": "UGX 10,000",
+        "openingHours": "9:00 AM - 5:00 PM"
+    },
+    {
+        "id": 6,
+        "name": "Bahá'í Temple",
+        "category": "Religious",
+        "location": "Kikaya Hill",
+        "image": "images/bahai.webp",
+        "description": "Africa's only Bahá'í House of Worship surrounded by peaceful gardens.",
+        "rating": 4.9,
+        "entryFee": "Free",
+        "openingHours": "8:00 AM - 5:00 PM"
+    },
+    {
+        "id": 7,
+        "name": "Independence Monument",
+        "category": "Historical",
+        "location": "City Centre",
+        "image": "images/monument.webp",
+        "description": "A symbolic monument celebrating Uganda's independence.",
+        "rating": 4.5,
+        "entryFee": "Free",
+        "openingHours": "Open All Day"
+    },
+    {
+        "id": 8,
+        "name": "Makerere University",
+        "category": "Historical",
+        "location": "Makerere",
+        "image": "images/makerere.webp",
+        "description": "One of Africa's oldest universities with beautiful architecture.",
+        "rating": 4.7,
+        "entryFee": "Free",
+        "openingHours": "Open Daily"
+    },
+    {
+        "id": 9,
+        "name": "Namirembe Cathedral",
+        "category": "Religious",
+        "location": "Namirembe Hill",
+        "image": "images/namirembe.webp",
+        "description": "Historic Anglican cathedral overlooking Kampala.",
+        "rating": 4.8,
+        "entryFee": "Free",
+        "openingHours": "8:00 AM - 5:00 PM"
+    },
+    {
+        "id": 10,
+        "name": "Rubaga Cathedral",
+        "category": "Religious",
+        "location": "Rubaga",
+        "image": "images/rubaga.webp",
+        "description": "One of Uganda's most beautiful Catholic cathedrals.",
+        "rating": 4.8,
+        "entryFee": "Free",
+        "openingHours": "8:00 AM - 5:00 PM"
+    },
+    {
+        "id": 11,
+        "name": "Centenary Park",
+        "category": "Nature",
+        "location": "Kampala",
+        "image": "images/centenary.webp",
+        "description": "A popular recreation park with restaurants, gardens and events.",
+        "rating": 4.5,
+        "entryFee": "Free",
+        "openingHours": "Open Daily"
+    },
+    {
+        "id": 12,
+        "name": "Owino Market",
+        "category": "Cultural",
+        "location": "Downtown Kampala",
+        "image": "images/owino.webp",
+        "description": "Uganda's largest open-air market famous for shopping and local culture.",
+        "rating": 4.4,
+        "entryFee": "Free",
+        "openingHours": "7:00 AM - 8:00 PM"
+    },
+    {
+        "id": 13,
+        "name": "Nakasero Market",
+        "category": "Cultural",
+        "location": "Nakasero",
+        "image": "images/nakasero.webp",
+        "description": "Fresh fruits, vegetables, spices and local products in Kampala city.",
+        "rating": 4.6,
+        "entryFee": "Free",
+        "openingHours": "6:00 AM - 7:00 PM"
+    },
+    {
+        "id": 14,
+        "name": "Ggaba Beach",
+        "category": "Nature",
+        "location": "Lake Victoria",
+        "image": "images/ggaba.webp",
+        "description": "Relax by Lake Victoria with fresh fish and beautiful sunsets.",
+        "rating": 4.7,
+        "entryFee": "UGX 10,000",
+        "openingHours": "8:00 AM - 10:00 PM"
+    },
+    {
+        "id": 15,
+        "name": "Nommo Gallery",
+        "category": "Museum",
+        "location": "Victoria Avenue",
+        "image": "images/nommo.webp",
+        "description": "An art gallery featuring contemporary and traditional Ugandan artwork.",
+        "rating": 4.6,
+        "entryFee": "UGX 5,000",
+        "openingHours": "9:00 AM - 5:00 PM"
+    }
+]
