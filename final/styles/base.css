@@ -160,6 +160,8 @@ section {
     padding: 3rem 2rem;
     border-radius: 28px;
     box-shadow: 0 24px 60px rgba(0, 0, 0, .14);
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .page-banner h2,
@@ -492,12 +494,14 @@ input[type="submit"] {
 footer {
     width: 100%;
     padding: 2rem 1rem;
-    color: #525252;
+    color: white;
     display: grid;
     gap: .75rem;
     text-align: center;
     border-top: 1px solid rgba(0, 0, 0, .08);
     box-sizing: border-box;
+    background: var(--primary-color);
+    margin-top: 3rem;
 }
 
 footer p {
@@ -505,7 +509,11 @@ footer p {
 }
 
 footer a {
-    color: var(--primary-color);
+    color: white;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
 }
 
 @media (max-width: 767px) {
@@ -616,30 +624,7 @@ footer a {
     margin-bottom: .75rem;
 }
 
-/* ---------- FOOTER ---------- */
-
-footer {
-    background: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 3rem;
-}
-
-footer a {
-    color: white;
-}
-
-footer a:hover {
-    color: var(--secondary-color);
-}
-
 /* ---------- UTILITIES ---------- */
-
-.page-banner {
-    text-align: center;
-    margin-bottom: 2rem;
-}
 
 .favorites {
     margin-top: 3rem;
