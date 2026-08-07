@@ -58,12 +58,20 @@ header {
     box-shadow: 0 16px 35px rgba(0, 0, 0, .12);
 }
 
-.logo h1 {
+.logo .site-name {
     color: var(--white);
     text-align: center;
     margin: 0;
     font-size: 1.55rem;
+    font-weight: 700;
     letter-spacing: .08em;
+}
+
+main h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin: 0 0 1.5rem;
+    line-height: 1.2;
 }
 
 #menu {
@@ -619,10 +627,6 @@ footer a:hover {
 
 
 /* ---------- THANK YOU ---------- */
-
-.details p {
-    margin-bottom: .75rem;
-}
 
 /* ---------- UTILITIES ---------- */
 
