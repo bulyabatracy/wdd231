@@ -11,8 +11,6 @@
     --max-width: 1200px;
 }
 
-/* ---------- RESET ---------- */
-
 * {
     margin: 0;
     padding: 0;
@@ -77,7 +75,7 @@ main h1 {
 #menu {
     display: block;
     margin: 0 auto;
-    background: rgba(255, 255, 255, .1);
+    background: rgba(0, 0, 0, .35);
     border: 1px solid rgba(255, 255, 255, .25);
     color: var(--white);
     font-size: 1.4rem;
@@ -91,7 +89,7 @@ main h1 {
 
 #menu:hover,
 #menu:focus {
-    background: rgba(255, 255, 255, .18);
+    background: rgba(0, 0, 0, .5);
     transform: translateY(-1px);
     outline: none;
 }
@@ -624,11 +622,6 @@ footer a:hover {
         grid-template-columns: repeat(4, 1fr);
     }
 }
-
-
-/* ---------- THANK YOU ---------- */
-
-/* ---------- UTILITIES ---------- */
 
 .favorites {
     margin-top: 3rem;
