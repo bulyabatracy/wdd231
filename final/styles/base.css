@@ -77,7 +77,7 @@ header {
     font-size: 1.6rem;
     font-weight: 700;
     letter-spacing: 0.05em;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .logo .site-name::before {
@@ -112,8 +112,8 @@ main h1::after {
 #menu {
     display: block;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.15);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(13, 43, 31, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.35);
     color: var(--white);
     font-size: 1.4rem;
     padding: 0.65rem 0.9rem;
@@ -126,9 +126,9 @@ main h1::after {
 
 #menu:hover,
 #menu:focus {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(26, 77, 46, 0.95);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     outline: none;
 }
 
@@ -275,6 +275,7 @@ section:hover {
     line-height: 1.05;
     position: relative;
     z-index: 1;
+    color: #FFFFFF;
 }
 
 .hero-text p {
@@ -282,6 +283,8 @@ section:hover {
     max-width: 40rem;
     position: relative;
     z-index: 1;
+    margin-bottom: 1.25rem;
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .hero {
@@ -314,16 +317,6 @@ section:hover {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-lg);
     border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.hero-text h2,
-.hero-text p {
-    color: #FFFFFF;
-}
-
-.hero-text p {
-    margin-bottom: 1.25rem;
-    color: rgba(255, 255, 255, 0.95);
 }
 
 .button {
