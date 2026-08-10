@@ -15,27 +15,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap"
         rel="stylesheet">
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <!-- External CSS -->
     <link rel="stylesheet" href="styles/siteplan.css">
-
-
-    <script type="module" src="scripts/main.js"></script>
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <p class="site-name">Explore Kampala</p>
-
+            <p class="site-name">Visit Kampala Hub</p>
+        </div>
     </header>
 
     <main>
         <h1>Site Plan</h1>
+
         <!-- 1. SITE NAME -->
         <section>
             <h2>Site Name</h2>
@@ -72,20 +70,28 @@
             <h2>Color Scheme</h2>
             <p>The color palette is inspired by Uganda: nature, sunshine, and the national flag. It creates a warm and
                 trustworthy feeling for travelers.</p>
-            <ul>
-                <li><span class="color-box" style="background-color: #2E7D32;"></span><strong>Primary - #2E7D32 Forest
-                        Green</strong>: Used for headings, navigation background, and footer background. Represents
-                    Uganda's national parks and nature.</li>
-                <li><span class="color-box" style="background-color: #FFA000;"></span><strong>Secondary - #FFA000
-                        Amber</strong>: Used for links, buttons, and accent icons. Represents sunshine and safari
-                    experiences.</li>
-                <li><span class="color-box" style="background-color: #D32F2F;"></span><strong>Accent - #D32F2F
-                        Red</strong>: Used for call-to-action buttons and important highlights. Represents the red in
-                    the Ugandan flag.</li>
-                <li><span class="color-box" style="background-color: #FAFAFA;"></span><strong>Background - #FAFAFA
-                        Off-white</strong>: Used for the main page background to keep content readable.</li>
-            </ul>
-            <p>Example Button: <span class="btn-example">Book a Tour</span></p>
+
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch swatch-green"></div>
+                    <p><span>Primary - #2E7D32</span><br>Forest Green<br><small>Headings, navigation, footer</small></p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch swatch-amber"></div>
+                    <p><span>Secondary - #FFA000</span><br>Amber<br><small>Links, buttons, icons, borders</small></p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch swatch-red"></div>
+                    <p><span>Accent - #D32F2F</span><br>Red<br><small>Call-to-action buttons, highlights</small></p>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch swatch-offwhite"></div>
+                    <p><span>Background - #FAFAFA</span><br>Off-white<br><small>Main page background</small></p>
+                </div>
+            </div>
+
+            <p><strong>Example Button:</strong> <span class="btn-example">Book a Tour</span></p>
+            <p><small>Note: This document uses the color scheme above - green headers and footer, amber borders and accents, red buttons, and off-white background.</small></p>
         </section>
 
         <!-- 5. TYPOGRAPHY -->
@@ -94,18 +100,16 @@
             <p>Two fonts will be used to create an elegant yet friendly tourism brand.</p>
             <ul>
                 <li><strong>Heading Font: Playfair Display</strong> - Used for all h1, h2, and h3 headings. It is
-                    elegant and evokes a sense of travel and adventure for site titles.</li>
+                    elegant and evokes a sense of travel and adventure for site titles. <span class="font-heading">(Example: The quick brown fox)</span></li>
                 <li><strong>Body Font: Lato</strong> - Used for all paragraph text, lists, and navigation links. It is
-                    highly legible for reading travel guides and details on mobile.</li>
+                    highly legible for reading travel guides and details on mobile. <span class="font-body">(Example: The quick brown fox)</span></li>
             </ul>
         </section>
-
 
         <!-- 6. WIREFRAMES -->
         <section id="wireframes">
             <h2>Wireframes (Home Page Layout)</h2>
-            <p><em>Note: These are pure structural sketches in black and white, focusing on layout and functionality
-                    without colors, images, or detailed design.</em></p>
+            <p><em>Note: These are structural sketches focusing on layout and functionality.</em></p>
 
             <!-- Large Viewport (Desktop) -->
             <div class="wireframe-section">
