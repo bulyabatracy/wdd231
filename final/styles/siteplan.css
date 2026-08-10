@@ -68,6 +68,11 @@ header .site-name {
     color: #FFFFFF;
 }
 
+header .site-name:not(:first-child) {
+    border-left: none;
+    padding-left: 0;
+}
+
 /* ===== SECTIONS ===== */
 section {
     background-color: #FFFFFF;
@@ -185,6 +190,22 @@ section p {
 }
 
 /* Large Viewport (Desktop) */
+.large-view .wf-header,
+.large-view .wf-hero,
+.large-view .wf-content,
+.large-view .wf-sidebar,
+.large-view .wf-footer,
+.small-view .wf-header,
+.small-view .wf-nav-stack,
+.small-view .wf-hero,
+.small-view .wf-content,
+.small-view .wf-sidebar,
+.small-view .wf-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .large-view .wf-header {
     background: #e0e0e0;
     padding: 0.8rem;
@@ -240,6 +261,21 @@ section p {
     padding: 0.8rem;
     text-align: center;
     border: 1px solid #555;
+}
+
+.small-view .wf-header h4,
+.small-view .wf-nav-stack h4,
+.small-view .wf-hero h4,
+.small-view .wf-content h4,
+.small-view .wf-sidebar h4,
+.small-view .wf-footer h4,
+.large-view .wf-header h4,
+.large-view .wf-hero h4,
+.large-view .wf-content h4,
+.large-view .wf-sidebar h4,
+.large-view .wf-footer h4 {
+    margin: 0;
+    font-size: 1rem;
 }
 
 .small-view .wf-hero {
