@@ -46,8 +46,8 @@ h2 {
 
 h3 {
     font-size: 1.3rem;
-    color: #D32F2F;
-    /* Red - Accent */
+    color: #B71C1C;
+    /* Darker red - improved contrast */
 }
 
 /* ===== HEADER ===== */
@@ -168,6 +168,13 @@ section p {
     font-family: 'Lato', sans-serif;
     font-size: 1.1rem;
     color: #333333;
+}
+
+/* Ensure small/caption text has sufficient contrast */
+small,
+.color-card small,
+.font-body small {
+    color: #222222;
 }
 
 /* ===== WIREFRAMES ===== */
